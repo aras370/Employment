@@ -1,3 +1,4 @@
+using EmploymentCore;
 using EmploymentDataLayer;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,7 @@ builder.Services.AddDbContext<MyContext>(options =>
 });
 
 
-
+builder.Services.AddScoped<IForm,FormService>();
 
 
 

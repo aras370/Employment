@@ -2021,11 +2021,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AmirHesam\\Desktop\\تستی\\EmploymentDataLayer\\EmploymentDataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\AmirHesam\\Desktop\\Employment\\EmploymentDataLayer\\EmploymentDataLayer.csproj",
       "projectName": "EmploymentDataLayer",
-      "projectPath": "C:\\Users\\AmirHesam\\Desktop\\تستی\\EmploymentDataLayer\\EmploymentDataLayer.csproj",
+      "projectPath": "C:\\Users\\AmirHesam\\Desktop\\Employment\\EmploymentDataLayer\\EmploymentDataLayer.csproj",
       "packagesPath": "C:\\Users\\AmirHesam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AmirHesam\\Desktop\\تستی\\EmploymentDataLayer\\obj\\",
+      "outputPath": "C:\\Users\\AmirHesam\\Desktop\\Employment\\EmploymentDataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

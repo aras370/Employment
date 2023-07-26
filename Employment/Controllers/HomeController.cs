@@ -1,4 +1,5 @@
 ﻿using Employment.Models;
+using EmploymentCore;
 using EmploymentDataLayer;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -9,9 +10,10 @@ namespace Employment.Controllers
     {
 
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        IForm _form;
+        public HomeController(ILogger<HomeController> logger,IForm form)
         {
+            _form = form;
             _logger = logger;
         }
 
