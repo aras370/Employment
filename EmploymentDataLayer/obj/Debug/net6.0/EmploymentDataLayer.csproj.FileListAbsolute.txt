@@ -1,0 +1,14 @@
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\bin\Debug\net6.0\EmploymentDataLayer.deps.json
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\bin\Debug\net6.0\EmploymentDataLayer.runtimeconfig.json
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\bin\Debug\net6.0\EmploymentDataLayer.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\bin\Debug\net6.0\EmploymentDataLayer.pdb
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.csproj.AssemblyReference.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.AssemblyInfoInputs.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.AssemblyInfo.cs
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.csproj.CoreCompileInputs.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\refint\EmploymentDataLayer.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.pdb
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\EmploymentDataLayer.genruntimeconfig.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentDataLayer\obj\Debug\net6.0\ref\EmploymentDataLayer.dll

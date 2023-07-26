@@ -1,0 +1,17 @@
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\bin\Debug\net6.0\EmploymentCore.deps.json
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\bin\Debug\net6.0\EmploymentCore.runtimeconfig.json
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\bin\Debug\net6.0\EmploymentCore.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\bin\Debug\net6.0\EmploymentCore.pdb
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\bin\Debug\net6.0\EmploymentDataLayer.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\bin\Debug\net6.0\EmploymentDataLayer.pdb
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.csproj.AssemblyReference.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.AssemblyInfoInputs.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.AssemblyInfo.cs
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.csproj.CoreCompileInputs.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.csproj.CopyComplete
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\refint\EmploymentCore.dll
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.pdb
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\EmploymentCore.genruntimeconfig.cache
+C:\Users\AmirHesam\Desktop\تستی\EmploymentCore\obj\Debug\net6.0\ref\EmploymentCore.dll
