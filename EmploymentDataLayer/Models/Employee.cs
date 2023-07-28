@@ -175,5 +175,12 @@ namespace EmploymentDataLayer
         [MaxLength(50, ErrorMessage = " {0} نمیتواند بیشتر از {1} باشد")]
 
         public string DateTime { get; set; }
+
+
+        public bool FirstConfirm { get; set; }
+
+        public bool SecondConfirm { get; set; }
+
+        public bool ThirdConfirm { get; set; }
     }
 }

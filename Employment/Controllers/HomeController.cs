@@ -30,7 +30,13 @@ namespace Employment.Controllers
         [HttpPost]
         public IActionResult Employment(Employee employee)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(employee);
+            }
+
+            _form.AddForm(employee);
+            return Redirect("/");
         }
 
 

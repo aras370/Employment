@@ -45,7 +45,6 @@ namespace EmploymentDataLayer.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("CodeMelli")
-                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("DateTime")
@@ -67,6 +66,9 @@ namespace EmploymentDataLayer.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("FirstConfirm")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Formerjob")
                         .IsRequired()
@@ -99,7 +101,6 @@ namespace EmploymentDataLayer.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("NumberOfChildren")
-                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
@@ -113,17 +114,21 @@ namespace EmploymentDataLayer.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("RequestedSalary")
-                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<int>("Salary")
-                        .HasMaxLength(50)
                         .HasColumnType("int");
+
+                    b.Property<bool>("SecondConfirm")
+                        .HasColumnType("bit");
 
                     b.Property<string>("StartDate")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("ThirdConfirm")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Univercity")
                         .IsRequired()

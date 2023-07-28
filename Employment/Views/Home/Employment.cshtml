@@ -1,158 +1,158 @@
 ﻿@model Employee
-<!DOCTYPE html>
-<html lang="fa">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فرم استخدام</title>
-</head>
 
-<body>
+<div class="container">
 
-    <div class="container">
+    <form method="post" asp-controller="Home" asp-action="Employment">
 
-    
+       <input type="hidden" asp-for="FirstConfirm" value="@false"/>
+        <input type="hidden" asp-for="SecondConfirm" value="@false"/>
+        <input type="hidden" asp-for="ThirdConfirm" value="@false"/>
+       
+        <div class="row mb-3">
+            <div class="col">
+                <label class="form-label">نام: </label>
+                <input asp-for="Name" class="form-control">
+            </div>
 
-        <form method="post">
+            <div class="col">
+                <label class="form-label">نام خانوادگی:</label>
+                <input  asp-for="LastName" class="form-control">
+            </div>
 
-            <div class="row mb-3">
-                <div class="col">
-                    <label  class="form-label">نام: </label>
-                    <input asp-for="Name" type="text" class="form-control"  >
-                </div>
+            <div class="col">
+                <label class="form-label">نام پدر:</label>
+                <input asp-for="FhatherName" class="form-control">
+            </div>
 
-                <div class="col">
-                    <label  class="form-label">نام خانوادگی:</label>
-                    <input type="email" asp-for="LastName" class="form-control"  >
-                </div>
+            <div class="col">
+                <label class="form-label">کد ملی:</label>
+                <input type="number" asp-for="CodeMelli" class="form-control">
+            </div>
 
-                <div class="col">
-                    <label  class="form-label">نام پدر:</label>
-                    <input asp-for="FhatherName" class="form-control" >
-                </div>
+        </div>
 
-                <div class="col">
-                    <label class="form-label">کد ملی:</label>
-                    <input type="number" asp-for="CodeMelli" class="form-control">
-                </div>
 
+        <div class="row mb-3">
+            <div class="col">
+                <label class="form-label">تاریخ تولد: </label>
+                <input asp-for="BirthDate" class="form-control">
+            </div>
+
+            <div class="col">
+                <label class="form-label">وضعیت تاهل:</label>
+                <input asp-for="Marriege" class="form-control">
+            </div>
+
+            <div class="col">
+                <label class="form-label">تعداد فرزندان:</label>
+                <input type="number" asp-for="NumberOfChildren" class="form-control">
+            </div>
+
+            <div class="col">
+                <label class="form-label">تحصیلات:</label>
+                <input asp-for="EducationLevel" class="form-control">
+            </div>
+
+        </div>
+
+
+        <div class="row mb-3">
+            <div class="col">
+                <label class="form-label">رشته تحصیلی: </label>
+                <input asp-for="Major" class="form-control">
+            </div>
+
+            <div class="col">
+                <label class="form-label">دانشگاه:</label>
+                <input asp-for="Univercity" class="form-control">
+            </div>
+
+            <div class="col">
+                <label class="form-label">شماره تلفن:</label>
+                <input asp-for="PhoneNumber" class="form-control">
             </div>
 
 
-            <div class="row mb-3">
-                <div class="col">
-                    <label  class="form-label">تاریخ تولد: </label>
-                    <input asp-for="BirthDate" class="form-control">
-                </div>
 
-                <div class="col">
-                    <label class="form-label">وضعیت تاهل:</label>
-                    <input asp-for="Marriege" class="form-control"  >
-                </div>
+        </div>
 
-                <div class="col">
-                    <label  class="form-label">تعداد فرزندان:</label>
-                    <input type="number" asp-for="NumberOfChildren" class="form-control"  >
-                </div>
+        <div class="row mb-3">
+            <label class="form-label">آدرس:</label>
+            <textarea asp-for="Address"></textarea>
+        </div>
 
-                <div class="col">
-                    <label  class="form-label">تحصیلات:</label>
-                    <input asp-for="EducationLevel" class="form-control">
-                </div>
-
-            </div>
-
-
-            <div class="row mb-3">
-                <div class="col">
-                    <label  class="form-label">رشته تحصیلی: </label>
-                    <input asp-for="Major" class="form-control"  >
-                </div>
-
-                <div class="col">
-                    <label  class="form-label">دانشگاه:</label>
-                    <input asp-for="Univercity" class="form-control"  >
-                </div>
-
-                <div class="col">
-                    <label  class="form-label">شماره تلفن:</label>
-                    <input asp-for="PhoneNumber" class="form-control"  >
-                </div>
-
-
-
-            </div>
-
-            <div class="row mb-3">
-                <label for="email" class="form-label">آدرس:</label>
-                <textarea asp-for="Address"></textarea>
-            </div>
-
-            <div class="row mb-3">
-                <p>
-                    <h4>
+        <div class="row mb-3">
+            <p>
+                <h4>
                     سوابق شغلی:
 
-                    </h4>
-                </p>
+                </h4>
+            </p>
 
-                <div class="col">
-                    <label class="form-label">شغل سابق:</label>
-                    <input asp-for="Formerjob" class="form-control" >
-                </div>
-
-                <div class="col">
-                    <label  class="form-label">تاریخ شروع:</label>
-                    <input asp-for="StartDate" class="form-control"  >
-                </div>
-
-
-                <div class="col">
-                    <label  class="form-label">تاریخ پایان:</label>
-                    <input asp-for="EndDate" class="form-control"  >
-                </div>
-
-
-                <div class="col">
-                    <label class="form-label">سمت:</label>
-                    <input asp-for="Position" class="form-control">
-                </div>
-
-                <div class="col">
-                    <label  class="form-label">حقوق:</label>
-                    <input type="number" asp-for="Salary" class="form-control" >
-                </div>
-
+            <div class="col">
+                <label class="form-label">شغل سابق:</label>
+                <input asp-for="Formerjob" class="form-control">
             </div>
 
-            <div class="row mb-3">
-                <label  class="form-label">علت ترک کار:</label>
-                <textarea asp-for="CauseOfLeave"></textarea>
-            </div>
-
-            <div class="row mb-3">
-                <label class="form-label">شماره و آدرس کارفرما:</label>
-                <textarea asp-for="InformaionOfFormerBoss"></textarea>
-            </div>
-
-            <div class="row mb-3">
-
-                <div class="col">
-                    <label  class="form-label">حقوق درخواستی:</label>
-                    <input type="number" asp-for="RequestedSalary">
-                </div>
-
-                <div class="col">
-                    <label  class="form-label">تاریخ:</label>
-                    <input type="text" asp-for="RequestedSalary">
-                </div>
-
+            <div class="col">
+                <label class="form-label">تاریخ شروع:</label>
+                <input asp-for="StartDate" class="form-control">
             </div>
 
 
-            <button type="submit" class="btn btn-primary">ارسال</button>
-        </form>
-    </div>
+            <div class="col">
+                <label class="form-label">تاریخ پایان:</label>
+                <input asp-for="EndDate" class="form-control">
+            </div>
 
-</body>
+
+            <div class="col">
+                <label class="form-label">سمت:</label>
+                <input asp-for="Position" class="form-control">
+            </div>
+
+            <div class="col">
+                <label class="form-label">حقوق:</label>
+                <input type="number" asp-for="Salary" class="form-control">
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+            <label class="form-label">علت ترک کار:</label>
+            <textarea asp-for="CauseOfLeave"></textarea>
+        </div>
+
+        <div class="row mb-3">
+            <label class="form-label">شماره و آدرس کارفرما:</label>
+            <textarea asp-for="InformaionOfFormerBoss"></textarea>
+        </div>
+
+        <div class="row mb-3">
+
+            <div class="col">
+                <label class="form-label">حقوق درخواستی:</label>
+                <input type="number" asp-for="RequestedSalary">
+            </div>
+
+            <div class="col">
+                <label class="form-label">تاریخ:</label>
+                <input type="text" asp-for="DateTime">
+            </div>
+
+
+            
+        </div>
+
+        <div asp-validation-summary="All">
+        </div>
+
+       
+        <input type="submit" class="btn btn-primary" value="ارسال" />
+
+
+    </form>
+
+    
+</div>
