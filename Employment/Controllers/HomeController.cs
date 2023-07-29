@@ -1,6 +1,7 @@
 ﻿using Employment.Models;
 using EmploymentCore;
 using EmploymentDataLayer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -22,22 +23,7 @@ namespace Employment.Controllers
             return View();
         }
 
-        public IActionResult Employment()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Employment(Employee employee)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(employee);
-            }
-
-            _form.AddForm(employee);
-            return Redirect("/");
-        }
+       
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -45,5 +31,12 @@ namespace Employment.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
+
+       
+
+
     }
 }

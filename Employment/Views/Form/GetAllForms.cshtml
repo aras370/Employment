@@ -1,0 +1,41 @@
+﻿@model List<Employee>
+
+@if (Model.Count != 0)
+{
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th scope="col">متقاضی</th>
+                    <th scope="col">عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.Name @item.LastName</td>
+                        <td>
+                            <a class="btn btn-success" asp-action="GetFormById" asp-route-id="@item.Id">مشاهده</a> | <a class="btn btn-danger">حذف</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <pre></pre>
+
+
+        <a href="/" class="btn btn-primary">بازگشت</a>
+
+
+    </div>
+}
+
+else{
+    <div class="alert alert-danger">
+        فرمی برای نمایش وجود ندارد
+    </div>
+}

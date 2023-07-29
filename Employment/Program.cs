@@ -1,5 +1,6 @@
 using EmploymentCore;
 using EmploymentDataLayer;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,13 +11,22 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyContext>(options =>
 {
 
-    options.UseSqlServer("Data Source=.; Initial Catalog=Employment; Integrated Security=true");
+    options.UseSqlServer("Data Source=.; Initial Catalog=Employmentt; Integrated Security=true");
 });
 
 
 builder.Services.AddScoped<IForm,FormService>();
+builder.Services.AddScoped<IUser,UserService>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+    options =>
 
+    {
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.ExpireTimeSpan = TimeSpan.FromDays(30);
+    }
+);
 
 var app = builder.Build();
 
@@ -39,6 +49,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseAuthentication();
+
 
 app.MapControllerRoute(
     name: "default",

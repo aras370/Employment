@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmploymentDataLayer.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20230727185646_editemployeetb")]
-    partial class editemployeetb
+    [Migration("20230729112044_rebuilddb")]
+    partial class rebuilddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -140,6 +140,27 @@ namespace EmploymentDataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
