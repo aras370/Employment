@@ -9,11 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
 builder.Services.AddDbContext<MyContext>(options =>
 {
-
     options.UseSqlServer("Data Source=.; Initial Catalog=Employmentt; Integrated Security=true");
 });
+
 
 
 builder.Services.AddScoped<IForm,FormService>();
@@ -27,6 +28,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Account/Logout";
         options.ExpireTimeSpan = TimeSpan.FromDays(30);
     }
+
 );
 
 var app = builder.Build();

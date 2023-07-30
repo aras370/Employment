@@ -32,6 +32,7 @@ namespace Employment.Controllers
             }
 
             _form.AddForm(employee);
+
             return Redirect("/");
         }
         public IActionResult GetAllForms()
@@ -68,7 +69,6 @@ namespace Employment.Controllers
         {
 
             _form.FinalConfirm(formId);
-
 
             return RedirectToAction("GetAllForms");
         }
