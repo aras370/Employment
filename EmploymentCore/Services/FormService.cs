@@ -23,6 +23,65 @@ namespace EmploymentCore
             _context.SaveChanges();
         }
 
+        public void ConfirmEmployee(int formId)
+        {
+            var form=GetFormById(formId);
+            form.Confirmation +=1;
+            _context.Update(form);
+            _context.SaveChanges();
+        }
+
+        public void DeleteForm(int formId)
+        {
+            var form=GetFormById(formId);
+            _context.Employees.Remove(form);
+            _context.SaveChanges();
+        }
+
+        public void FinalConfirm(int formId)
+        {
+            var form=GetFormById(formId);
+            _context.Employees.Remove(form);
+            _context.SaveChanges();
+
+            AcceptedEmployee employee = new AcceptedEmployee()
+            {
+                Address = form.Address,
+                BirthDate = form.BirthDate,
+                CauseOfLeave = form.CauseOfLeave,
+                CodeMelli = form.CodeMelli,
+                DateTime = form.DateTime,
+                EducationLevel = form.EducationLevel,
+                EndDate = form.EndDate,
+                FhatherName = form.FhatherName,
+                Formerjob = form.Formerjob,
+                InformaionOfFormerBoss = form.InformaionOfFormerBoss,
+                LastName = form.LastName,
+                Major = form.Major,
+                Marriege = form.Marriege,
+                Name = form.Name,
+                NumberOfChildren = form.NumberOfChildren, 
+                PhoneNumber = form.PhoneNumber,
+                Position = form.Position,
+                RequestedSalary = form.RequestedSalary,
+                Salary = form.Salary,
+                StartDate = form.StartDate,
+                Univercity = form.Univercity               
+            };
+            _context.AcceptedEmployees.Add(employee);
+            _context.SaveChanges(); 
+        }
+
+        public AcceptedEmployee GetAcceptedEmployeeById(int id)
+        {
+            return _context.AcceptedEmployees.SingleOrDefault(emp => emp.Id == id);
+        }
+
+        public List<AcceptedEmployee> GetAcceptedEmployees()
+        {
+            return _context.AcceptedEmployees.ToList();
+        }
+
         public List<Employee> GetEmployeesForUser(int userId)
         {
 
@@ -32,14 +91,14 @@ namespace EmploymentCore
 
             {
                 case 1:
-                employees= _context.Employees.Where(e => e.FirstConfirm == false).ToList();
+                employees= _context.Employees.Where(e => e.Confirmation==0).ToList();
                     break;
 
                     case 2:
-                    employees = _context.Employees.Where(e => e.FirstConfirm == true).ToList();
+                    employees = _context.Employees.Where(e => e.Confirmation==1).ToList();
                     break;
 
-                    case 3: employees = _context.Employees.Where(e => e.SecondConfirm == true).ToList();
+                    case 3: employees = _context.Employees.Where(e => e.Confirmation == 2).ToList();
                     break;
 
             }

@@ -1,12 +1,11 @@
-﻿@model Employee
+﻿@model AcceptedEmployee
 
 
 <div class="container mt-5">
 
 
 
-    <input type="hidden" asp-for="Confirmation" />
-
+    
     <div class="row mb-3">
         <div class="col">
             <label class="form-label">نام: </label>
@@ -144,18 +143,7 @@
 
     </div>
 
-
-    @if (Model.Confirmation == 2)
-    {
-        <a class="btn btn-success" asp-action="FinalConfirmation" asp-controller="Form" asp-route-formId="@Model.Id">تایید نهایی</a>
-
-    }
-    else
-    {
-        <a class="btn btn-success" asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">تایید متقاضی</a>
-
-    }
-    <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+    <a href="/Form/AcceptedPersons" class="btn btn-primary">بازگشت</a>
 
 
 </div>

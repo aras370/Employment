@@ -14,5 +14,15 @@ namespace EmploymentCore
         List<Employee> GetEmployeesForUser(int userId);
 
         Employee GetFormById(int id);
+
+        void ConfirmEmployee(int formId);
+
+        void DeleteForm(int formId);
+
+        void FinalConfirm(int formId);
+
+        List<AcceptedEmployee> GetAcceptedEmployees();
+
+        AcceptedEmployee GetAcceptedEmployeeById(int id);
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Employment.Controllers
 {
-
+    [Authorize]
     public class FormController : Controller
     {
         IForm _form;
@@ -49,5 +49,40 @@ namespace Employment.Controllers
 
         }
 
+        public ActionResult Confirm(int formId)
+        {
+
+            _form.ConfirmEmployee(formId);
+
+
+            return Redirect("/");
+        }
+
+        public IActionResult DeleteForm(int formId)
+        {
+            _form.DeleteForm(formId);
+            return RedirectToAction("GetAllForms");
+        }
+
+        public IActionResult FinalConfirmation(int formId)
+        {
+
+            _form.FinalConfirm(formId);
+
+
+            return RedirectToAction("GetAllForms");
+        }
+
+        public IActionResult AcceptedPersons()
+        {
+            var employees = _form.GetAcceptedEmployees();
+            return View(employees);
+        }
+
+        public IActionResult AcceptedPerson(int id)
+        {
+            var person=_form.GetAcceptedEmployeeById(id);
+            return View(person);
+        }
     }
 }

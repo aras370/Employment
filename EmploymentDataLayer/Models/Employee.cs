@@ -176,11 +176,7 @@ namespace EmploymentDataLayer
 
         public string DateTime { get; set; }
 
+        public int Confirmation { get; set; }
 
-        public bool FirstConfirm { get; set; }
-
-        public bool SecondConfirm { get; set; }
-
-        public bool ThirdConfirm { get; set; }
     }
 }
