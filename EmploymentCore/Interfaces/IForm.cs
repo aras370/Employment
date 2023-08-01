@@ -15,7 +15,7 @@ namespace EmploymentCore
 
         Employee GetFormById(int id);
 
-        void ConfirmEmployee(int formId);
+        void ConfirmEmployee(int formId,string? comment);
 
         void DeleteForm(int formId);
 

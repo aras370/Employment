@@ -23,24 +23,30 @@ namespace EmploymentCore
             _context.SaveChanges();
         }
 
-        public void ConfirmEmployee(int formId)
+        public void ConfirmEmployee(int formId, string? comment)
         {
-            var form=GetFormById(formId);
-            form.Confirmation +=1;
+            var form = GetFormById(formId);
+            form.Confirmation += 1;
+
+            if (comment != null)
+            {
+                form.Comment = comment;
+            }
+
             _context.Update(form);
             _context.SaveChanges();
         }
 
         public void DeleteForm(int formId)
         {
-            var form=GetFormById(formId);
+            var form = GetFormById(formId);
             _context.Employees.Remove(form);
             _context.SaveChanges();
         }
 
         public void FinalConfirm(int formId)
         {
-            var form=GetFormById(formId);
+            var form = GetFormById(formId);
             _context.Employees.Remove(form);
             _context.SaveChanges();
 
@@ -60,16 +66,17 @@ namespace EmploymentCore
                 Major = form.Major,
                 Marriege = form.Marriege,
                 Name = form.Name,
-                NumberOfChildren = form.NumberOfChildren, 
+                NumberOfChildren = form.NumberOfChildren,
                 PhoneNumber = form.PhoneNumber,
                 Position = form.Position,
                 RequestedSalary = form.RequestedSalary,
                 Salary = form.Salary,
                 StartDate = form.StartDate,
-                Univercity = form.Univercity               
+                Univercity = form.Univercity
             };
+
             _context.AcceptedEmployees.Add(employee);
-            _context.SaveChanges(); 
+            _context.SaveChanges();
         }
 
         public AcceptedEmployee GetAcceptedEmployeeById(int id)
@@ -91,14 +98,15 @@ namespace EmploymentCore
 
             {
                 case 1:
-                employees= _context.Employees.Where(e => e.Confirmation==0).ToList();
+                    employees = _context.Employees.Where(e => e.Confirmation == 0).ToList();
                     break;
 
-                    case 2:
-                    employees = _context.Employees.Where(e => e.Confirmation==1).ToList();
+                case 2:
+                    employees = _context.Employees.Where(e => e.Confirmation == 1).ToList();
                     break;
 
-                    case 3: employees = _context.Employees.Where(e => e.Confirmation == 2).ToList();
+                case 3:
+                    employees = _context.Employees.Where(e => e.Confirmation == 2).ToList();
                     break;
 
             }

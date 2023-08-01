@@ -1,7 +1,10 @@
+
 using EmploymentCore;
 using EmploymentDataLayer;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +21,7 @@ builder.Services.AddDbContext<MyContext>(options =>
 
 
 builder.Services.AddScoped<IForm,FormService>();
+
 builder.Services.AddScoped<IUser,UserService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
@@ -31,19 +35,20 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 );
 
+//builder.Services.AddRazorPages();
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-
-
-
 
 app.UseHttpsRedirection();
 
@@ -55,6 +60,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+//app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

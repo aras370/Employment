@@ -178,5 +178,11 @@ namespace EmploymentDataLayer
 
         public int Confirmation { get; set; }
 
+
+
+        [Display(Name ="دیدگاه کارشناس:")]
+        [MaxLength(300, ErrorMessage = " {0} نمیتواند بیشتر از {1} باشد")]
+        public string? Comment { get; set; }
+
     }
 }

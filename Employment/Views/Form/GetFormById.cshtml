@@ -77,7 +77,7 @@
 
     <div class="row mb-3">
         <label class="form-label">آدرس:</label>
-        <textarea readonly asp-for="Address"></textarea>
+        <textarea class="form-control" readonly asp-for="Address"></textarea>
     </div>
 
     <div class="row mb-3">
@@ -119,43 +119,101 @@
 
     <div class="row mb-3">
         <label class="form-label">علت ترک کار:</label>
-        <textarea readonly asp-for="CauseOfLeave"></textarea>
+        <textarea class="form-control" readonly asp-for="CauseOfLeave"></textarea>
     </div>
 
     <div class="row mb-3">
         <label class="form-label">شماره و آدرس کارفرما:</label>
-        <textarea readonly asp-for="InformaionOfFormerBoss"></textarea>
+        <textarea class="form-control" readonly asp-for="InformaionOfFormerBoss"></textarea>
     </div>
 
-    <div class="row mb-3">
+    <div class="row row-cols-2 mb-3">
 
         <div class="col">
             <label class="form-label">حقوق درخواستی:</label>
-            <input readonly type="number" asp-for="RequestedSalary">
+            <input class="form-control" readonly type="number" asp-for="RequestedSalary">
         </div>
 
         <div class="col">
             <label class="form-label">تاریخ:</label>
-            <input readonly type="text" asp-for="DateTime">
+            <input class="form-control" readonly type="text" asp-for="DateTime">
         </div>
 
         @*<span asp-validation-for="Name"></span>*@
 
 
+
+
     </div>
 
 
-    @if (Model.Confirmation == 2)
+    @* @if (Model.Comment != null)
     {
-        <a class="btn btn-success" asp-action="FinalConfirmation" asp-controller="Form" asp-route-formId="@Model.Id">تایید نهایی</a>
+    <div class="row mb-3">
+    <label asp-for="Comment" class="form-label"></label>
+    <textarea readonly asp-for="Comment" class="form-control"></textarea>
+    </div>
+    }*@
 
+
+    @if (Model.Confirmation == 0)
+    {
+        <form asp-action="Confirm" asp-controller="Form">
+            <div class="row mb-3">
+                <label class="form-label">دیدگاه کارشناس:</label>
+                <textarea name="comment" class="form-control"></textarea>
+            </div>
+            <input type="hidden" name="formId" value="@Model.Id">
+            <input type="submit" value="تایید متقاضی" class="btn btn-success">
+            <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+        </form>
     }
-    else
+
+
+
+    @if (Model.Confirmation==1 && Model.Comment==null)
     {
         <a class="btn btn-success" asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">تایید متقاضی</a>
-
+        <a class="btn btn-primary" asp-action="GetAllForms" asp-controller="Form">بازگشت</a>
     }
-    <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
 
+
+    @if (Model.Confirmation == 2 && Model.Comment == null)
+    {
+        <a class="btn btn-success" asp-action="FinalConfirmation" asp-controller="Form" asp-route-formId="@Model.Id">تایید نهایی</a>
+        <a class="btn btn-primary" asp-action="GetAllForms" asp-controller="Form">بازگشت</a>
+    }
+
+
+    @if (Model.Comment!=null)
+    {
+
+        @if (Model.Confirmation == 1)
+        {
+            <form asp-action="Confirm" asp-controller="Form">
+                <div class="row mb-3">
+                    <label asp-for="Comment" class="form-label"></label>
+                    <textarea readonly asp-for="Comment" class="form-control"></textarea>
+                </div>
+                <input type="hidden" name="formId" value="@Model.Id">
+                <input type="submit" value="تایید متقاضی" class="btn btn-success">
+            </form>
+
+        }
+
+        @if (Model.Confirmation == 2)
+        {
+
+            <div class="row mb-3">
+                <label asp-for="Comment" class="form-label"></label>
+                <textarea readonly asp-for="Comment" class="form-control"></textarea>
+            </div>
+
+            <a class="btn btn-success" asp-action="FinalConfirmation" asp-controller="Form" asp-route-formId="@Model.Id">تایید نهایی</a>
+            <a class="btn btn-primary" asp-action="GetAllForms" asp-controller="Form">بازگشت</a>
+
+        }
+    }
 
 </div>

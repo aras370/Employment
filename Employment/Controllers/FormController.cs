@@ -5,15 +5,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Employment.Controllers
 {
+
     [Authorize]
     public class FormController : Controller
     {
+
         IForm _form;
 
         public FormController(IForm form)
         {
             _form = form;
         }
+
+
+
 
         [AllowAnonymous]
         public IActionResult Employment()
@@ -35,6 +40,8 @@ namespace Employment.Controllers
 
             return Redirect("/");
         }
+
+
         public IActionResult GetAllForms()
         {
 
@@ -43,6 +50,7 @@ namespace Employment.Controllers
             return View(form);
         }
 
+
         public IActionResult GetFormById(int id)
         {
             var form= _form.GetFormById(id);
@@ -50,18 +58,21 @@ namespace Employment.Controllers
 
         }
 
-        public ActionResult Confirm(int formId)
+
+
+        public ActionResult Confirm(int formId,string? comment)
         {
 
-            _form.ConfirmEmployee(formId);
+            _form.ConfirmEmployee(formId,comment);
 
-
+            
             return Redirect("/");
         }
 
         public IActionResult DeleteForm(int formId)
         {
             _form.DeleteForm(formId);
+
             return RedirectToAction("GetAllForms");
         }
 

@@ -30,8 +30,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             var user = _user.GetUserByUserId(int.Parse(User.Identity.Name));
-
-                           
+                            
                             <li class="nav-item">
                                 <a class="nav-link text-dark" >@user.Name خوش آمدید</a>
 
@@ -49,7 +48,9 @@
                                 <a class="nav-link text-dark" asp-controller="Account" asp-action="LogOut">خروج</a>
                             </li>
                         }
+
                         else
+                                     
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">ورود</a>
@@ -59,9 +60,7 @@
                                 <a class="nav-link text-dark" asp-controller="Form" asp-action="Employment">پر کردن فرم استخدام </a>
                             </li>
 
-                        }
-
-                       
+                        }                      
 
                     </ul>
                 </div>

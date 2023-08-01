@@ -140,6 +140,10 @@ namespace EmploymentDataLayer.Migrations
                     b.Property<int>("CodeMelli")
                         .HasColumnType("int");
 
+                    b.Property<string>("Comment")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
                     b.Property<int>("Confirmation")
                         .HasColumnType("int");
 
