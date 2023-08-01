@@ -18,8 +18,6 @@ namespace Employment.Controllers
         }
 
 
-
-
         [AllowAnonymous]
         public IActionResult Employment()
         {
@@ -60,7 +58,7 @@ namespace Employment.Controllers
 
 
 
-        public ActionResult Confirm(int formId,string? comment)
+        public ActionResult Confirm(int formId, string? comment)
         {
 
             _form.ConfirmEmployee(formId,comment);

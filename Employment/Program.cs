@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddDbContext<MyContext>(options =>
+builder.Services.AddDbContext<MyContext>(options=>
 {
     options.UseSqlServer("Data Source=.; Initial Catalog=Employmentt; Integrated Security=true");
 });
@@ -67,3 +67,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
