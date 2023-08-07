@@ -1,0 +1,274 @@
+:root {
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100;
+    --green: #2eb9c0 !important;
+    --light-green: rgb(169, 237, 232);
+}
+
+* {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IranSans";
+    /* direction:"rtl"; */
+}
+
+@font-face {
+    font-family: "IranSans";
+    src: url("IRANSans 4.2/Fonts/WebFonts/fonts/eot/IRANSansWeb.eot") format("eot");
+    src: url("IRANSans 4.2/Fonts/WebFonts/fonts/ttf/IRANSansWeb.ttf") format("ttf");
+    src: url("IRANSans 4.2/Fonts/WebFonts/fonts/woff/IRANSansWeb.woff") format("woff");
+    src: url("IRANSans 4.2/Fonts/WebFonts/fonts/woff2/IRANSansWeb.woff2") format("woff2");
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+
+/******************* header ***********************/
+form {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+}
+
+header {
+    color: var(--green);
+    padding: 10px 0;
+    width: 100%;
+    margin: 0 auto;
+}
+header h3{
+    font-weight: 600;
+}
+/******************* content ***********************/
+.content,
+.second {
+    width: 90%;
+    margin: 0 auto;
+    /* height: 50px; */
+    border: 1px solid transparent;
+    border-radius: 5px !important;
+}
+
+.content .part {
+    border: 1px solid transparent;
+}
+
+ span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.part p {
+    margin-bottom: 0 !important;
+}
+
+.content .text-right {
+    font-size: 18px;
+}
+
+.part input , .card input {
+    border: 1px solid #f1f1f1;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    padding: 20px;
+}
+
+.input-group.has-validation>.input-group-append:nth-last-child(n+3)>.btn,
+.input-group.has-validation>.input-group-append:nth-last-child(n+3)>.input-group-text,
+.input-group:not(.has-validation)>.input-group-append:not(:last-child)>.btn,
+.input-group:not(.has-validation)>.input-group-append:not(:last-child)>.input-group-text,
+.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle),
+.input-group>.input-group-append:last-child>.input-group-text:not(:last-child),
+.input-group>.input-group-prepend>.btn,
+.input-group>.input-group-prepend>.input-group-text {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    background-color: #e8ebe8;
+    border: none;
+}
+input[type = number]{
+    padding: 0 3px !important;
+}
+input:hover, textarea:hover {
+    background-color: #e7e6e6;
+    transition: .3s all ease-in-out;
+}
+ input:focus ,textarea:focus{
+    border: none;
+    border-bottom: 2px solid var(--green) !important;
+    transition: .3s all ease-in-out;
+}
+textarea{
+    border: none !important;
+}
+.form-row {
+    margin: 0 !important;
+}
+
+form i {
+    color: var(--green);
+    font-size: 18px !important;
+}
+
+/**** card ****/
+.card{
+    border: none !important;
+    border-radius: 5px !important;
+}
+.card .btn-group button{
+    border: 1px solid var(--green);
+    width: 110px;
+    font-size: 15px;
+    /* padding: 0 2px; */
+}
+.card .btn-group .dropdown-menu{
+  width: 80%;
+  text-align: right;
+} 
+.btn-group:hover{
+    background-color: #e7e6e6;
+    transition: .3s all ease-in-out;
+}
+.card .btn-group .dropdown-item:hover{
+   background-color: var(--green);
+   height: 100%;
+}
+/* responsive dropdown */
+@media (max-width: 768px) { 
+    .card .btn-group button{
+        width: 100%;
+        font-size: 17px;
+        padding: 0 50px;
+    }
+    .card .btn-group .dropdown-menu{
+        width: 100%;
+        text-align: right;
+      } 
+ }
+
+
+
+
+
+/**** form check ****/
+.information .form-check{
+    text-align: right;
+    margin: 0 1rem;
+    /* background-color: var(--green); */
+    padding: 10px 7px;
+    border-radius: 5px;
+}
+
+.information .form-check label{
+    margin-right: 1.8rem;
+    padding-top: 5px;
+}
+.information .form-check:hover{
+    background-color: #e7e6e6 !important;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+.information .form-check:focus{
+   background-color: var(--light-green) !important;
+   transition: .3s all ease-in-out;
+}
+.information .checkmark{
+    position: absolute;
+    right: 0;
+    height: 22px;
+    width: 22px;
+    margin: 0 5px; 
+}
+input[type=file]{
+    /* border: 1px solid var(--green) !important; */
+    padding: 3px 5px;
+    direction: ltr;
+}
+input[type=radio]{
+    border: 1px solid var(--green) !important;
+    border-radius: 50% !important;
+}
+
+/**** table ****/
+/* tbl */
+.tbl-spacing {
+    border-collapse: separate;
+    border-spacing:0 24px;
+}  
+
+table thead{
+    background-color: var(--green);
+    color: #fff;
+    font-size: 18px;
+}
+.table thead th{
+    border-bottom: 1px solid #f1f1f1 !important;
+}
+table .form-check{
+    padding-left: 2rem;
+}
+.table td,.table th{
+    border-top: none !important;
+}
+.software{
+    text-align: center;
+    /* padding-right: 3rem; */
+}
+/* .software th{
+   padding-right: 30px !important;
+} */
+
+
+/******************* footer ***********************/
+
+footer button{
+    width: 100%;
+    border: none;
+    background-color: var(--green);
+    padding: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px ;
+}
+.modal{
+    display: none;
+    border: 1px solid var(--green);
+}
+.modal-content{
+    border: 1px solid var(--green) !important;
+}
+
+.modal-body span{
+  color: var(--green);
+}
+.modal i{
+    font-size: 50px !important;
+    margin: 0 auto;
+}
+.modal-footer{
+    border: none !important;
+}
+.hideButton{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* error - validation */
+label.error{
+    font-weight: 700;
+    display: block;
+    color: #f00;
+    font-size: 14px;
+}

@@ -51,7 +51,7 @@ namespace Employment.Controllers
 
         public IActionResult GetFormById(int id)
         {
-            var form= _form.GetFormById(id);
+            var form = _form.GetFormById(id);
             return View(form);
 
         }
@@ -61,10 +61,10 @@ namespace Employment.Controllers
         public ActionResult Confirm(int formId, string? comment)
         {
 
-            _form.ConfirmEmployee(formId,comment);
+            _form.ConfirmEmployee(formId, comment);
 
-            
-            return Redirect("/");
+
+            return RedirectToAction("GetAllForms");
         }
 
         public IActionResult DeleteForm(int formId)
@@ -90,7 +90,7 @@ namespace Employment.Controllers
 
         public IActionResult AcceptedPerson(int id)
         {
-            var person=_form.GetAcceptedEmployeeById(id);
+            var person = _form.GetAcceptedEmployeeById(id);
             return View(person);
         }
     }

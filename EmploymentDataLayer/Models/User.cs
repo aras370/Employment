@@ -17,5 +17,10 @@ namespace EmploymentDataLayer
         public string Password { get; set; }
 
 
+        #region Relations
+
+        public List<UsersPermission> UsersPermissions { get; set; }
+
+        #endregion
     }
 }

@@ -1,0 +1,43 @@
+﻿@model EditUserPanel
+
+<div class="mt-5">
+
+    <form method="post" action="EditUserInformation">
+
+        <input asp-for="Id" type="hidden" value="@ViewBag.userid" />
+
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">نام کاربری:</label>
+            <div class="col col-3">
+                <input class="form-control" value="@ViewBag.name" asp-for="UserName" />
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">کلمه عبور:</label>
+            <div class="col col-3">
+                <input asp-for="Password" value="@ViewBag.password" class="form-control " id="inputEmail3">
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">تکرار کلمه عبور:</label>
+            <div class="col col-3">
+                <input asp-for="RePassword" value="@ViewBag.password" class="form-control " id="inputEmail3">
+            </div>
+        </div>
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <pre>
+
+        </pre>
+
+        <button type="submit" class="btn btn-success">ویرایش</button>
+        <button type="submit" class="btn btn-primary" asp-action="Panel" asp-route-id="@ViewBag.userid">بازگشت</button>
+
+    </form>
+
+</div>

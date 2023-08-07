@@ -19,5 +19,10 @@ namespace EmploymentDataLayer
         public DbSet<User> Users { get; set; }
         public DbSet<AcceptedEmployee> AcceptedEmployees { get; set; }
 
+
+        public DbSet<Permission> Permissions { get; set; }
+
+        public DbSet<UsersPermission> UsersPermissions { get; set; }
+
     }
 }

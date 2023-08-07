@@ -1,203 +1,530 @@
 ﻿@model Employee
 
 
-<div class="container mt-5">
+@*{
+    Layout = null;
+}*@
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم استخدام</title>
+    <link rel="stylesheet" href="~/css1/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-    <input type="hidden" asp-for="Confirmation" />
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jquery -->
+  
+    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> -->
+</head>
 
-    <div class="row mb-3">
-        <div class="col">
-            <label class="form-label">نام: </label>
-            <input readonly asp-for="Name" class="form-control">
+<body class="bg-light">
+
+    <!-- header -->
+    <header class="bg-white mb-4 shadow-sm">
+        <h3 class="text-center">فرم استخدام</h3>
+    </header>
+    <!-- content1 -->
+    <div class="content bg-white my-3 shadow-sm">
+        <div class="part py-3 px-1 my-2">
+            <p class="text-right"><span class="text-danger px-1">* </span>لطفا نام و نام خانوادگی خود را وارد نمایید.</p>
+            <div class="form-row my-3">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                    <div class="input-group mb-2 px-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <input asp-for=Name type="text" class="form-control shadow-sm" placeholder="نام" readonly>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                    <div class="input-group mb-2 px-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i> </div>
+                        </div>
+                        <input asp-for=LastName type="text" class="form-control shadow-sm" placeholder="نام خانوادگی" readonly>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="col">
-            <label class="form-label">نام خانوادگی:</label>
-            <input readonly asp-for="LastName" class="form-control">
+    <!-- content2 -->
+
+    <div class="content my-3">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> کد ملی</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=CodeMelli type="number" class="form-control shadow-sm" placeholder="0XXXXXXXXX" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> تاریخ تولد</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=BirthDate type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> نام پدر</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=FhatherName class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-
-        <div class="col">
-            <label class="form-label">نام پدر:</label>
-            <input readonly asp-for="FhatherName" class="form-control">
+    </div>
+    <!-- content3 -->
+    <div class="content bg-white my-3 shadow-sm">
+        <div class="part py-3 px-1 my-2">
+            <p class="text-right px-3">آدرس محل سکونت</p>
+            <div class="input-group mb-2 my-3 px-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <textarea asp-for=Address type="text" class="form-control shadow-sm" cols="10" rows="3" placeholder="نشانی" readonly> </textarea>
+            </div>
         </div>
+    </div>
+    <!-- content4 -->
+    <div class="content my-3">
+        <div class="row">
 
-        <div class="col">
-            <label class="form-label">کد ملی:</label>
-            <input readonly type="number" asp-for="CodeMelli" class="form-control">
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"> میزان تحصیلات</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=EducationLevel type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span>رشته تحصیلی</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=Major type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right px-3">دانشگاه</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=Univercity type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+    <!-- content5 -->
+    <div class="content my-3 ">
+        <div class="row">
 
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"> وضعیت تاهل</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=Marriege type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> تعداد فرزندان</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=NumberOfChildren type="number" class="form-control shadow-sm" placeholder="0XXXXXXXXX" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> شماره همراه</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=PhoneNumber class="form-control shadow-sm" placeholder="09XXXXXXXXX" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
     </div>
 
 
-    <div class="row mb-3">
-        <div class="col">
-            <label class="form-label">تاریخ تولد: </label>
-            <input readonly asp-for="BirthDate" class="form-control">
-        </div>
 
-        <div class="col">
-            <label class="form-label">وضعیت تاهل:</label>
-            <input readonly asp-for="Marriege" class="form-control">
-        </div>
 
-        <div class="col">
-            <label class="form-label">تعداد فرزندان:</label>
-            <input readonly type="number" asp-for="NumberOfChildren" class="form-control">
-        </div>
+    <!-- content9 -->
+    <div class="content my-3">
+        <div class="row">
 
-        <div class="col">
-            <label class="form-label">تحصیلات:</label>
-            <input readonly asp-for="EducationLevel" class="form-control">
-        </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"> شغل پیشین</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=Formerjob type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right px-3"> تاریخ شروع شغل پیشین </p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=StartDate type="text" class="form-control shadow-sm" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"> تاریخ اتمام شغل پیشین</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=EndDate type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 
-    <div class="row mb-3">
-        <div class="col">
-            <label class="form-label">رشته تحصیلی: </label>
-            <input readonly asp-for="Major" class="form-control">
+
+    <!-- content10 -->
+    <!-- content11 -->
+
+
+    <div class="content bg-white my-3 shadow-sm">
+        <div class="part py-3 px-1 my-2">
+            <p class="text-right px-3">اطلاعات کارفرما پیشین (شماره،آدرس کارفرما) </p>
+            <div class="input-group mb-2 my-3 px-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-font" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <textarea asp-for=InformaionOfFormerBoss type="text" class="form-control shadow-sm" cols="10" rows="3" readonly> </textarea>
+            </div>
         </div>
-
-        <div class="col">
-            <label class="form-label">دانشگاه:</label>
-            <input readonly asp-for="Univercity" class="form-control">
+    </div>
+    <!-- content12 -->
+    <div class="content bg-white my-3 shadow-sm">
+        <div class="part py-3 px-1 my-2">
+            <p class="text-right px-3">  علت ترک شغل پیشین</p>
+            <div class="input-group mb-2 my-3 px-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-font" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <textarea asp-for=CauseOfLeave type="text" class="form-control shadow-sm" cols="10" rows="3" readonly> </textarea>
+            </div>
         </div>
+    </div>
+    <!-- content13 -->
+    <div class="content my-3 ">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"> حقوق پیشین</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-usd" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=Salary type="number" class="form-control shadow-sm" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> حقوق درخواستی</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-usd" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=RequestedSalary type="number" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="col">
-            <label class="form-label">شماره تلفن:</label>
-            <input readonly asp-for="PhoneNumber" class="form-control">
+            <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span> تاریخ پر کردن فرم</p>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for=DateTime class="form-control shadow-sm" style="direction: ltr;" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-
-
-
     </div>
 
-    <div class="row mb-3">
-        <label class="form-label">آدرس:</label>
-        <textarea class="form-control" readonly asp-for="Address"></textarea>
-    </div>
+    <!-- content14 -->
+    <!-- content15 -->
+    <!-- content16 -->
+    @* <footer class="content my-3">
+    <button onclick="showModal()">ثبت اطلاعات</button>
+    </footer>*@
 
-    <div class="row mb-3">
-        <p>
-            <h4>
-                سوابق شغلی:
 
-            </h4>
-        </p>
-
-        <div class="col">
-            <label class="form-label">شغل سابق:</label>
-            <input readonly asp-for="Formerjob" class="form-control">
+    <!-- modal -->
+    <div class="modal" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-check-square my-3" aria-hidden="true"></i>
+                <div class="modal-body text-center">
+                    <span class="font-weight-bold charge">مشخصات شما با موفقیت ثبت شد</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary hideButton" data-bs-dismiss="modal" onclick="hideBox()">بستن</button>
+                </div>
+            </div>
         </div>
-
-        <div class="col">
-            <label class="form-label">تاریخ شروع:</label>
-            <input readonly asp-for="StartDate" class="form-control">
-        </div>
-
-
-        <div class="col">
-            <label class="form-label">تاریخ پایان:</label>
-            <input readonly asp-for="EndDate" class="form-control">
-        </div>
-
-
-        <div class="col">
-            <label class="form-label">سمت:</label>
-            <input readonly asp-for="Position" class="form-control">
-        </div>
-
-        <div class="col">
-            <label class="form-label">حقوق:</label>
-            <input readonly type="number" asp-for="Salary" class="form-control">
-        </div>
-
-    </div>
-
-    <div class="row mb-3">
-        <label class="form-label">علت ترک کار:</label>
-        <textarea class="form-control" readonly asp-for="CauseOfLeave"></textarea>
-    </div>
-
-    <div class="row mb-3">
-        <label class="form-label">شماره و آدرس کارفرما:</label>
-        <textarea class="form-control" readonly asp-for="InformaionOfFormerBoss"></textarea>
-    </div>
-
-    <div class="row row-cols-2 mb-3">
-
-        <div class="col">
-            <label class="form-label">حقوق درخواستی:</label>
-            <input class="form-control" readonly type="number" asp-for="RequestedSalary">
-        </div>
-
-        <div class="col">
-            <label class="form-label">تاریخ:</label>
-            <input class="form-control" readonly type="text" asp-for="DateTime">
-        </div>
-
-        @*<span asp-validation-for="Name"></span>*@
-
-
-
-
     </div>
 
 
-    @* @if (Model.Comment != null)
-    {
-    <div class="row mb-3">
-    <label asp-for="Comment" class="form-label"></label>
-    <textarea readonly asp-for="Comment" class="form-control"></textarea>
-    </div>
-    }*@
 
-
+    <!---------- js  --------------->
+    <!-- jquery -->
     @if (Model.Confirmation == 0)
     {
-        <form asp-action="Confirm" asp-controller="Form">
-            <div class="row mb-3">
-                <label class="form-label">دیدگاه کارشناس:</label>
-                <textarea name="comment" class="form-control"></textarea>
+        <form asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">
+            <div class="content bg-white my-3 shadow-sm">
+                <div class="part py-3 px-1 my-2">
+                    <p class="text-right px-3">دیدگاه کارشناس</p>
+                    <div class="input-group mb-2 my-3 px-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <textarea name="comment" type="text" class="form-control shadow-sm" cols="10" rows="3"> </textarea>
+                    </div>
+                </div>
+                <div class="row me-auto">
+                    <div class="col col-2">
+
+                        <input type="submit" value="تایید متقاضی" class="btn btn-success">
+                    </div>
+
+                    <div class="col col-1">
+                        <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+                    </div>
+
+                </div>
+
             </div>
-            <input type="hidden" name="formId" value="@Model.Id">
-            <input type="submit" value="تایید متقاضی" class="btn btn-success">
-            <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
 
         </form>
     }
 
 
 
-    @if (Model.Confirmation==1 && Model.Comment==null)
+    @if (Model.Confirmation == 1 && Model.Comment == null)
     {
-        <a class="btn btn-success" asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">تایید متقاضی</a>
-        <a class="btn btn-primary" asp-action="GetAllForms" asp-controller="Form">بازگشت</a>
+        <div class="row me-auto">
+            <div class="col col-2">
+
+                <a class="btn btn-success" asp-action="Confirm" asp-route-formId="@Model.Id">تایید متقاضی</a>
+            </div>
+
+            <div class="col col-1">
+                <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+            </div>
+
+        </div>
     }
 
 
     @if (Model.Confirmation == 2 && Model.Comment == null)
     {
-        <a class="btn btn-success" asp-action="FinalConfirmation" asp-controller="Form" asp-route-formId="@Model.Id">تایید نهایی</a>
-        <a class="btn btn-primary" asp-action="GetAllForms" asp-controller="Form">بازگشت</a>
+        <div class="row me-auto">
+            <div class="col col-2">
+
+                <a class="btn btn-success" asp-action="FinalConfirmation" asp-route-formId="@Model.Id">تایید نهایی</a>
+            </div>
+
+            <div class="col col-1">
+                <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+            </div>
+
+        </div>
     }
 
 
-    @if (Model.Comment!=null)
+    @if (Model.Comment != null)
     {
 
         @if (Model.Confirmation == 1)
         {
-            <form asp-action="Confirm" asp-controller="Form">
-                <div class="row mb-3">
-                    <label asp-for="Comment" class="form-label"></label>
-                    <textarea readonly asp-for="Comment" class="form-control"></textarea>
+            <form asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">
+                <div class="content bg-white my-3 shadow-sm">
+                    <div class="part py-3 px-1 my-2">
+                        <p class="text-right px-3">دیدگاه کارشناس</p>
+                        <div class="input-group mb-2 my-3 px-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <textarea asp-for=Comment type="text" class="form-control shadow-sm" cols="10" rows="3" readonly> </textarea>
+                        </div>
+                    </div>
+                    <div class="row me-auto">
+                        <div class="col col-2">
+
+                            <input type="submit" value="تایید متقاضی" class="btn btn-success">
+                        </div>
+
+                        <div class="col col-1">
+                            <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <input type="hidden" name="formId" value="@Model.Id">
-                <input type="submit" value="تایید متقاضی" class="btn btn-success">
             </form>
 
         }
@@ -205,15 +532,49 @@
         @if (Model.Confirmation == 2)
         {
 
-            <div class="row mb-3">
-                <label asp-for="Comment" class="form-label"></label>
-                <textarea readonly asp-for="Comment" class="form-control"></textarea>
+            <div class="content bg-white my-3 shadow-sm">
+                <div class="part py-3 px-1 my-2">
+                    <p class="text-right px-3">دیدگاه کارشناس</p>
+                    <div class="input-group mb-2 my-3 px-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <textarea asp-for=Comment type="text" class="form-control shadow-sm" cols="10" rows="3" readonly> </textarea>
+                    </div>
+                </div>
+
+                <div class="row me-auto">
+                    <div class="col col-2">
+
+                        <a class="btn btn-success" asp-action="FinalConfirmation" asp-route-formId="@Model.Id">تایید نهایی</a>
+                    </div>
+
+                    <div class="col col-1">
+                        <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+                    </div>
+
+                </div>
+
             </div>
-
-            <a class="btn btn-success" asp-action="FinalConfirmation" asp-controller="Form" asp-route-formId="@Model.Id">تایید نهایی</a>
-            <a class="btn btn-primary" asp-action="GetAllForms" asp-controller="Form">بازگشت</a>
-
         }
     }
 
-</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jquery validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <!-- js -->
+    <script src="index.js"></script>
+    <!-- bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

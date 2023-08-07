@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم استخدام</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- jquery -->
+    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> -->
+</head>
+
+<body class="bg-light">
+    <form class="bg-light shadow-sm" name="formValidation" id="formValidation" action="valid.html" >
+        <!-- header -->
+        <header class="bg-white mb-4 shadow-sm">
+            <h3 class="text-center">فرم استخدام</h3>
+        </header>
+        <!-- content1 -->
+        <div class="content bg-white my-3 shadow-sm">
+            <div class="part py-3 px-1 my-2">
+                <p class="text-right"><span class="text-danger px-1">* </span>لطفا نام و نام خانوادگی خود را وارد نمایید.</p>
+                <div class="form-row my-3">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                        <div class="input-group mb-2 px-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="name" class="form-control shadow-sm" placeholder="نام" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                        <div class="input-group mb-2 px-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i> </div>
+                            </div>
+                            <input type="text" name="name2" class="form-control shadow-sm" placeholder="نام خانوادگی" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content2 -->
+        <!-- <div class="content">
+            <div class="row justify-content-between">
+                <div class="content2 bg-light">
+                    <div class="col-4">
+                        One of two columns
+                    </div>
+                </div>
+                <div class="content2 bg-light">
+                    <div class="col-4">
+                        One of two columns
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="content my-3">
+          <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <div class="card shadow-sm my-2">
+                <div class="card-body">
+                    <p class="text-right"><span class="text-danger px-1">* </span> کد ملی</p>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <input type="number" name="number" class="form-control shadow-sm" placeholder="0XXXXXXXXX" style="direction: ltr;" required>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <div class="card shadow-sm my-2">
+                <div class="card-body">
+                    <p class="text-right"><span class="text-danger px-1">* </span> تاریخ تولد</p>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="date" class="form-control shadow-sm" style="direction: ltr;" required>
+                    </div>
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"><span class="text-danger px-1">* </span> شماره همراه</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="number" name="number2" class="form-control shadow-sm" placeholder="09XXXXXXXXX" style="direction: ltr;" required>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <!-- content3 -->
+        <div class="content bg-white my-3 shadow-sm">
+            <div class="part py-3 px-1 my-2">
+                <p class="text-right px-3">آدرس محل سکونت</p>
+                <div class="input-group mb-2 my-3 px-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <textarea type="text" class="form-control shadow-sm" cols="10" rows="3" placeholder="نشانی" required> </textarea>
+                </div>
+            </div>
+        </div>
+        <!-- content4 -->
+        <div class="content my-3">
+          <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"><span class="text-danger px-1">* </span> میزان تحصیلات</p>
+                      <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <div class="btn-group">
+                              <button class="btn btn-white btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                  تحصیلات
+                              </button>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">کاردانی</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">کارشناسی</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">کارشناسی ارشد</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"> دکترا</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"><span class="text-danger px-1">* </span>رشته تحصیلی</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>                              </i>
+                              </div>
+                          </div>
+                          <input type="text" name="mager" class="form-control shadow-sm"  style="direction: ltr;" required>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right px-3">دانشگاه</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="text" name="name" class="form-control shadow-sm" style="direction: ltr;">
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <!-- content5 -->
+        <div class="content my-3 ">
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="card shadow-sm information my-2">
+                    <div class="card-body">
+                        <p class="text-right"><span class="text-danger px-1">* </span>وضعیت تاهل</p>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" required>
+                            <label class="form-check-label" for="exampleRadios2">مجرد  </label>
+                        </div><br>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" required>
+                            <label class="form-check-label" for="exampleRadios2"> متاهل</label>
+                        </div>      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card shadow-sm information my-2">
+                    <div class="card-body">
+                        <p class="text-right">وضعیت سلامت</p>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">بله  </label>
+                        </div><br>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2"> خیر</label>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- content7-table -->
+        <div class="content my-3 bg-white my-3 shadow-sm">
+            <div class="part py-3 px-1 my-2">
+                <p class="text-right px-3"><span class="text-danger px-1">* </span>میزان آشنایی با زبان  انگلیسی</p>
+                <div class="part py-3 px-1 my-2">
+                    <!-- table -->
+                    <table class="table bg-white tbl-spacing">
+                        <thead class="my-2">
+                          <tr class="shadow-md">
+                            <th scope="col"></th>
+                            <th scope="col">عالی</th>
+                            <th scope="col">خوب</th>
+                            <th scope="col">متوسط</th>
+                            <th scope="col">ضعیف</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">خواندن</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">نوشتن</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">مکالمه</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+               </div>   
+            </div>   
+        </div>
+        <!-- content8-tables -->
+         <div class="content my-3 bg-white my-3 shadow-sm">
+            <div class="part py-3 px-1 my-2">
+                <p class="text-right px-3"><span class="text-danger px-1">* </span>میزان آشنایی با نرم افزارها</p>
+                <div class="part py-3 px-1 my-2">
+                    <!-- table -->
+                    <table class="table bg-white software tbl-spacing">
+                        <thead class="my-2">
+                          <tr class="shadow-md">
+                            <th scope="col"></th>
+                            <th scope="col">عالی</th>
+                            <th scope="col">خوب</th>
+                            <th scope="col">متوسط</th>
+                            <th scope="col">ضعیف</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">word</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">excell</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">powerpoint</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">photoshop</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="shadow-lg my-2">
+                            <th scope="row">visual studio</th>
+                            <td>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                </div>    
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">      
+                                  </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+               </div>   
+            </div>   
+        </div>
+        <!-- content9 -->
+        <div class="content my-3">
+          <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right px-3"> تاریخ شروع شغل پیشین </p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="text" name="name" class="form-control shadow-sm"  required>       
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"> تاریخ اتمام شغل پیشین</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i>                              </i>
+                              </div>
+                          </div>
+                          <input type="text" name="name" class="form-control shadow-sm"  style="direction: ltr;">
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right">سمت واگذار شده شغل پیشین</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="text" name="name" class="form-control shadow-sm" style="direction: ltr;">
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <!-- content10 -->
+        <!-- <div class="content my-3 ">
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="card shadow-sm information my-2">
+                    <div class="card-body">
+                        <p class="text-right px-3">آیا قادر به کار شیفتی می باشید؟</p>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">بله  </label>
+                        </div><br>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2"> خیر</label>
+                        </div>      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card shadow-sm information my-2">
+                    <div class="card-body">
+                        <p class="text-right px-3">از کارفرمایان خود میتوانید رضایت نامه دریافت کنید؟</p>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">بله  </label>
+                        </div><br>
+                        <div class="form-check bg-light shadow-sm">
+                            <input class="form-check-input checkmark" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2"> خیر</label>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <!-- content11 -->
+        <div class="content bg-white my-3 shadow-sm">
+          <div class="part py-3 px-1 my-2">
+            <p class="text-right px-3">اطلاعات کارفرما پیشین (شماره،آدرس کارفرما) </p>
+            <div class="input-group mb-2 my-3 px-2">
+              <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>
+                    </div>
+              </div>
+              <textarea type="text" class="form-control shadow-sm" cols="10" rows="3"> </textarea>
+            </div>
+          </div>
+        </div>
+        <!-- content12 -->
+        <div class="content bg-white my-3 shadow-sm">
+          <div class="part py-3 px-1 my-2">
+            <p class="text-right px-3">  علت ترک شغل پیشین</p>
+            <div class="input-group mb-2 my-3 px-2">
+              <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>
+                    </div>
+              </div>
+              <textarea type="text" class="form-control shadow-sm" cols="10" rows="3" > </textarea>
+            </div>
+          </div>
+        </div>
+        <!-- content13 -->
+        <div class="content my-3 ">
+          <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"> حقوق پیشین</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-usd" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="number" class="form-control shadow-sm"  >
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"><span class="text-danger px-1">* </span> حقوق درخواستی</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-usd" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="number" name="salary" class="form-control shadow-sm"  style="direction: ltr;" required>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="card shadow-sm my-2">
+                  <div class="card-body">
+                      <p class="text-right"><span class="text-danger px-1">* </span> تاریخ پر کردن فرم</p>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i>
+                              </div>
+                          </div>
+                          <input type="number" name="datee" class="form-control shadow-sm" style="direction: ltr;" required>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <!-- content14 -->
+        <div class="content bg-white my-3 shadow-sm">
+            <div class="part py-3 px-1 my-2">
+                <p class="text-right px-3">ارسال رزومه</p>
+                <div class="part py-3 px-1 my-2">
+                    <div class="input-group mb-2 px-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-file" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <input type="file" name="resume" class="form-control shadow-sm" required>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <!-- content15 -->
+        <!-- <div class="content bg-white my-3 shadow-sm">
+          <div class="part py-3 px-1 my-2">
+            <p class="text-right px-3">دیدگاه کارشناس</p>
+            <div class="input-group mb-2 my-3 px-2">
+              <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-font" aria-hidden="true"></i>
+                    </div>
+              </div>
+              <textarea type="text" class="form-control shadow-sm" cols="10" rows="3"> </textarea>
+            </div>
+          </div>
+        </div> -->
+        <!-- content16 -->
+        <footer class="content my-3">
+            <button onclick="showModal()">ثبت اطلاعات</button>
+        </footer>
+        <!-- modal -->
+        <div class="modal" tabindex="-1" id="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <i class="fa fa-check-square my-3" aria-hidden="true"></i>
+                <div class="modal-body text-center">
+                  <span class="font-weight-bold charge">مشخصات شما با موفقیت ثبت شد</span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary hideButton" data-bs-dismiss="modal" onclick="hideBox()">بستن</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </form>
+
+
+    <!---------- js  --------------->
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jquery validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <!-- js -->
+    <script src="index.js"></script>   
+    <!-- bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+
+</html>

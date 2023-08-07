@@ -1,0 +1,39 @@
+﻿@model EmploymentDataLayer.User
+
+
+<div class=container>
+    @*<nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a >هتل دیپلمات</a></li>
+            <li class="breadcrumb-item active" aria-current="page"> پنل کاربری </li>
+        </ul>
+    </nav>*@
+</div>
+<main>
+    <div class="container">
+        <div class="user-account">
+            <div class="row">
+               
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <section class="user-account-content">
+                      
+                        <div class=inner>
+                            <div class="account-information">
+                                <h3> پنل کاربری </h3>
+                                <pre></pre>
+                                <hr />
+                                <ul>
+
+                                    <li> <i class="zmdi zmdi-assignment-account"></i> نام کاربری : @Model.Name  </li>
+                                    <li class="mt-4" > <i class="zmdi zmdi-email"></i> رمز ورود : @Model.Password</li>
+                                    <li class="mt-4 text-decoration-none"> <a class="text-decoration-none" asp-action="EditUserInformation" asp-route-userId="@Model.Id">ویرایش اطلاعات کاربری</a> </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

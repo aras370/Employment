@@ -30,10 +30,18 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             var user = _user.GetUserByUserId(int.Parse(User.Identity.Name));
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" >@user.Name خوش آمدید</a>
 
+                            <li class="nav-item">
+                                <a class="nav-link text-dark">@user.Name خوش آمدید</a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="UserPanel" asp-action="Panel" asp-route-id="@(int.Parse(User.Identity.Name))">پنل کاربری</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index" >مدیریت کاربران</a>
                             </li>
 
                             <li class="nav-item">
@@ -50,7 +58,7 @@
                         }
 
                         else
-                                     
+
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">ورود</a>
@@ -60,7 +68,7 @@
                                 <a class="nav-link text-dark" asp-controller="Form" asp-action="Employment">پر کردن فرم استخدام </a>
                             </li>
 
-                        }                      
+                        }
 
                     </ul>
                 </div>
@@ -73,13 +81,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Employment - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

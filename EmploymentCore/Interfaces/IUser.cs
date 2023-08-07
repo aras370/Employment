@@ -13,5 +13,12 @@ namespace EmploymentCore
         User LoginUser(string username, string password);
 
         User GetUserByUserId(int userId);
+
+        void EditUser(EditUserPanel user);
+
+        List<User> GetUsers();
+
+
+        List<Permission> GetPermissions();
     }
 }

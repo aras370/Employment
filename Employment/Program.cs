@@ -13,16 +13,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddDbContext<MyContext>(options=>
+builder.Services.AddDbContext<MyContext>(options =>
 {
     options.UseSqlServer("Data Source=.; Initial Catalog=Employmentt; Integrated Security=true");
 });
 
 
 
-builder.Services.AddScoped<IForm,FormService>();
+builder.Services.AddScoped<IForm, FormService>();
 
-builder.Services.AddScoped<IUser,UserService>();
+builder.Services.AddScoped<IUser, UserService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
     options =>
@@ -61,6 +61,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //app.MapRazorPages();
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
 
 app.MapControllerRoute(
     name: "default",

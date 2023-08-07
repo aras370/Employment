@@ -58,7 +58,7 @@ namespace Employment.Controllers
 
             HttpContext.SignInAsync(principal, properties);
 
-            return Redirect("/");
+            return Redirect("/UserPanel/Panel/" + user.Id);
         }
 
         public IActionResult LogOut()
@@ -66,5 +66,8 @@ namespace Employment.Controllers
             HttpContext.SignOutAsync();
             return Redirect("/");
         }
+
+
+      
     }
 }

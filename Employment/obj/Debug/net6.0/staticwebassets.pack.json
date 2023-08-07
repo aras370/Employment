@@ -5,16 +5,536 @@
       "PackagePath": "staticwebassets\\Employment.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\12619158_975.png",
-      "PackagePath": "staticwebassets\\12619158_975.png"
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\About_Different_formats.pdf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\About_Different_formats.pdf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\About_Different_formats.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\About_Different_formats.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\English to Farsi numbers help.pdf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\English to Farsi numbers help.pdf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\Farsi_numerals_(Non Standard).png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\Farsi_numerals_(Non Standard).png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum).ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum).ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\IRANSans(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum).ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum).ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\IRANSansMobile(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\MobileFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\MobileFonts\\MobileFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\IRANSans.html",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\IRANSans.html"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\WebFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\WebFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\css\\fontiran.css",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\css\\fontiran.css"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\css\\style.css",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSans(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSans(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum).eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum).eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Bold.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Light.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_UltraLight.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum).ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum).ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum).woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum).woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Bold.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Light.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Medium.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum).woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum).woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Bold.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Light.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Medium.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_UltraLight.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Farsi_numerals_(Non Standard)\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans4-2.html",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans4-2.html"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans4.jpg",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\IRANSans_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\IRANSans_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\IRANSansMobile_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\MobileFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\MobileFonts\\MobileFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRAN Sans-Mobile(NoEn).ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRAN Sans-Mobile(NoEn).ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn) ultralight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn) ultralight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_ultralight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_ultralight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\MobileFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\MobileFonts\\MobileFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\Non_English.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\Non_English.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\IRANSans.html",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\IRANSans.html"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\WebFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\WebFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\css\\fontiran.css",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\css\\fontiran.css"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\css\\style.css",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn).eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn).eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Bold.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Light.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Medium.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_UltraLight.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn).ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn).ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn).woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn).woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Bold.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Light.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Medium.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn).woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn).woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Bold.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Light.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Medium.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_UltraLight.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\PYSoft.ir.url",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\PYSoft.ir.url"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\ReadMe.txt",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\ReadMe.txt"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small).ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small).ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\IRANSans(Small)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\SmallSizeFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\SmallSizeFonts\\SmallSizeFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\IRANSans.html",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\IRANSans.html"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\WebFonts.png",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\WebFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\css\\fontiran.css",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\css\\fontiran.css"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\css\\style.css",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_Bold.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_Light.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_Medium.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_UltraLight.eot",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\eot\\IRANSansWeb_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_Bold.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_Light.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_Medium.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\ttf\\IRANSansWeb_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_Bold.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_Light.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_Medium.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff2\\IRANSansWeb_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_Bold.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_Light.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_Medium.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_UltraLight.woff",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\WebFonts\\fonts\\woff\\IRANSansWeb_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\Fonts\\license.pdf",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\Fonts\\license.pdf"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\PYSoft.ir.url",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\PYSoft.ir.url"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\IRANSans 4.2\\ReadMe.txt",
+      "PackagePath": "staticwebassets\\css1\\IRANSans 4.2\\ReadMe.txt"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\checkmark.png",
+      "PackagePath": "staticwebassets\\css1\\img\\checkmark.png"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire1.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire1.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire2.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire2.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire3.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire3.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire4.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire4.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire5.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire5.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire6.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire6.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire7.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire7.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\img\\hire8.avif",
+      "PackagePath": "staticwebassets\\css1\\img\\hire8.avif"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\index.html",
+      "PackagePath": "staticwebassets\\css1\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\index.js",
+      "PackagePath": "staticwebassets\\css1\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css1\\style.css",
+      "PackagePath": "staticwebassets\\css1\\style.css"
     },
     {
       "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
-      "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
       "Id": "C:\\Users\\AmirHesam\\Desktop\\Employment\\Employment\\wwwroot\\js\\site.js",

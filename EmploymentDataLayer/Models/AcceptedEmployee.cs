@@ -98,12 +98,6 @@ namespace EmploymentDataLayer
 
       
 
-        public string Position { get; set; }
-
-
-
-      
-
         public int Salary { get; set; }
 
 

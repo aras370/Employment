@@ -1,0 +1,36 @@
+﻿@model List<EmploymentDataLayer.User>
+@{
+    ViewData["Title"] = "کاربران";
+   
+}
+
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col"> نام کاربر </th>
+                <th scope="col">عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Name</td>
+                    <td>
+                        <a class="btn btn-warning"  asp-route-id="@item.Id">ویرایش</a> | <a class="btn btn-danger"  asp-route-id="@item.Id">حذف</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <pre></pre>
+
+    <a class="btn btn-success" asp-action="Create">افزودن</a>
+    <a href="/" class="btn btn-primary">بازگشت</a>
+
+
+</div>

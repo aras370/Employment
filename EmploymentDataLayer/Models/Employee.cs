@@ -134,12 +134,7 @@ namespace EmploymentDataLayer
 
 
 
-        [Display(Name = "سمت")]
-        [Required(ErrorMessage = "لطفا{0} را وارد کنید")]
-        [MaxLength(50, ErrorMessage = " {0} نمیتواند بیشتر از {1} باشد")]
-
-        public string Position { get; set; }
-
+        
 
 
         [Display(Name = "حقوق")]

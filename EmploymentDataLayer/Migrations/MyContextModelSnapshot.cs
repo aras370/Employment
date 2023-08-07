@@ -91,10 +91,6 @@ namespace EmploymentDataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Position")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RequestedSalary")
                         .HasColumnType("int");
 
@@ -205,11 +201,6 @@ namespace EmploymentDataLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Position")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<int>("RequestedSalary")
                         .HasColumnType("int");
 
@@ -231,6 +222,23 @@ namespace EmploymentDataLayer.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("EmploymentDataLayer.Permission", b =>
+                {
+                    b.Property<int>("PermissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PermissionId"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PermissionId");
+
+                    b.ToTable("Permissions");
+                });
+
             modelBuilder.Entity("EmploymentDataLayer.User", b =>
                 {
                     b.Property<int>("Id")
@@ -250,6 +258,58 @@ namespace EmploymentDataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.UsersPermission", b =>
+                {
+                    b.Property<int>("UpId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UpId"), 1L, 1);
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UpId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UsersPermissions");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.UsersPermission", b =>
+                {
+                    b.HasOne("EmploymentDataLayer.Permission", "Permission")
+                        .WithMany("UsersPermissions")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EmploymentDataLayer.User", "User")
+                        .WithMany("UsersPermissions")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Permission");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.Permission", b =>
+                {
+                    b.Navigation("UsersPermissions");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.User", b =>
+                {
+                    b.Navigation("UsersPermissions");
                 });
 #pragma warning restore 612, 618
         }
