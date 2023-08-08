@@ -44,7 +44,7 @@ namespace Employment.Controllers
             var claims = new List<Claim>()
             {
                  
-                new Claim(ClaimTypes.Name , user.Id.ToString()),
+                new Claim(ClaimTypes.Name , user.Name),
             };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

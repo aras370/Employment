@@ -11,10 +11,12 @@ namespace Employment.Controllers
     {
 
         IForm _form;
+        IUser _user;
 
-        public FormController(IForm form)
+        public FormController(IForm form, IUser user)
         {
             _form = form;
+            _user = user;
         }
 
 
@@ -42,8 +44,8 @@ namespace Employment.Controllers
 
         public IActionResult GetAllForms()
         {
-
-            var form = _form.GetEmployeesForUser(int.Parse(User.Identity.Name));
+            var user=_user.GetUserByUserName(User.Identity.Name);
+            var form = _form.GetEmployeesForUser(user.Id);
 
             return View(form);
         }

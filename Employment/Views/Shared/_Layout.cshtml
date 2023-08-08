@@ -27,15 +27,15 @@
 
                         @if (User.Identity.IsAuthenticated)
                         {
-                            var user = _user.GetUserByUserId(int.Parse(User.Identity.Name));
+                            var user = _user.GetUserByUserName(User.Identity.Name);
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark">@user.Name خوش آمدید</a>
+                                <a class="nav-link text-dark">@User.Identity.Name خوش آمدید</a>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark"  asp-controller="UserPanel" asp-action="Panel" asp-route-id="@(int.Parse(User.Identity.Name))">پنل کاربری</a>
+                                <a class="nav-link text-dark"  asp-controller="UserPanel" asp-action="Panel" asp-route-id="@user.Id">پنل کاربری</a>
                             </li>
 
                             <li class="nav-item">

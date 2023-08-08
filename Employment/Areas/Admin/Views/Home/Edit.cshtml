@@ -1,0 +1,50 @@
+﻿@model EmploymentDataLayer.User
+
+@inject IUser _user
+
+
+
+<form method="post" action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">نام کاربری:</label>
+        <div class="col-sm-3">
+            <input asp-for="Name" class="form-control" id="inputEmail3">
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">کلمه عبور:</label>
+        <div class="col-sm-3">
+            <input asp-for="Password" class="form-control" id="inputPassword3">
+        </div>
+    </div>
+
+
+  
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <pre>
+    </pre>
+
+    <div class="form-group">
+        <div class="row">
+            دسترسی های کاربر
+        </div>
+        <hr />
+        <ul>
+            @foreach (var item in _user.GetPermissions())
+            {
+                <li>
+                    <input type="checkbox" name="SelectedPermissions" value="@item.PermissionId" @((Model.UsersPermissions.Any(r => r.PermissionId == item.PermissionId) ? "checked" : ""))>@item.Name
+                </li>
+            }
+        </ul>
+    </div>
+
+    <pre></pre>
+
+    <button type="submit" class="btn btn-success">ویرایش</button>
+    <a asp-action="Index" class="btn btn-primary">بازگشت</a>
+</form>

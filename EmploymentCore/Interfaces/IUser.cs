@@ -18,7 +18,26 @@ namespace EmploymentCore
 
         List<User> GetUsers();
 
-
         List<Permission> GetPermissions();
+
+
+        void AddUserByAdmin(EditUserPanel user, List<int> permissions);
+
+
+        void EditUserByAdmin(User user, List<int> permissions);
+
+
+        void RemoveUserByAdmin(User user);
+
+
+        bool CheckUserPermission(int permissionId, string userName);
+
+
+        User GetUserByUserName(string userName);
+
+
+        //EditUserPanel GetUserForEditByAdmin(int userId);
+
+        //List<int> GetUserPermissions(int userId);
     }
 }

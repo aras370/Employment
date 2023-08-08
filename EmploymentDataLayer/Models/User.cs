@@ -10,6 +10,7 @@ namespace EmploymentDataLayer
     public class User
     {
         [Key]
+
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -19,7 +20,7 @@ namespace EmploymentDataLayer
 
         #region Relations
 
-        public List<UsersPermission> UsersPermissions { get; set; }
+        public List<UsersPermission>? UsersPermissions { get; set; }
 
         #endregion
     }

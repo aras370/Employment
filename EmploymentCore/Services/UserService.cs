@@ -1,4 +1,5 @@
 ﻿using EmploymentDataLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,43 +9,135 @@ using System.Threading.Tasks;
 namespace EmploymentCore
 {
 
-    public class UserService:IUser
+    public class UserService : IUser
     {
         MyContext _context;
 
 
         public UserService(MyContext myContext)
         {
-                _context = myContext;
+            _context = myContext;
+        }
+
+        public void AddUserByAdmin(EditUserPanel user, List<int> permissions)
+        {
+            User newuser = new User()
+            {
+                Name = user.UserName,
+                Password = user.Password
+            };
+
+            _context.Users.Add(newuser);
+            _context.SaveChanges();
+            foreach (var permission in permissions)
+            {
+                UsersPermission usersPermission = new UsersPermission()
+                {
+                    UserId = newuser.Id,
+                    PermissionId = permission
+                };
+                _context.Add(usersPermission);
+            };
+            _context.SaveChanges();
+        }
+
+        public bool CheckUserPermission(int permissionId, string userName)
+        {
+           
+
+                var userId = _context.Users.Single(u => u.Name == userName).Id;
+
+                List<int> userpermissions = _context.UsersPermissions.Where(up => up.UserId == userId).Select
+                    (ur => ur.PermissionId).ToList();
+
+                if (!userpermissions.Any())
+                {
+                    return false;
+                }
+
+
+                return true;
+
+
+                //List<int> rolepermissions = _context.RolePermissions.Where(rp => rp.PermissionId == permissionId).
+                //    Select(rp => rp.RoleId).ToList();
+
+                //return rolepermissions.Any(rl => userroles.Contains(rl));
+
+
         }
 
         public void EditUser(EditUserPanel user)
         {
             var newuser = GetUserByUserId(user.Id);
             newuser.Name = user.UserName;
-            newuser.Password= user.Password;
+            newuser.Password = user.Password;
             _context.Update(newuser);
+            _context.SaveChanges();
+        }
+
+        public void EditUserByAdmin(User user, List<int> permissions)
+        {
+            _context.Users.Update(user);
+            _context.SaveChanges();
+            _context.UsersPermissions.Where(up => up.UserId == user.Id).ToList().ForEach(p => _context.UsersPermissions.Remove(p));
+            foreach (var permission in permissions)
+            {
+                UsersPermission usersPermission = new UsersPermission()
+                {
+                    UserId = user.Id,
+                    PermissionId = permission
+                };
+                _context.Add(usersPermission);
+            };
             _context.SaveChanges();
         }
 
         public List<Permission> GetPermissions()
         {
-            return _context.Permissions.ToList();
+            return _context.Permissions.Include(p => p.UsersPermissions).ToList();
         }
 
         public User GetUserByUserId(int userId)
         {
-            return _context.Users.Find(userId);
+            return _context.Users.Include(u => u.UsersPermissions).Where(u => u.Id == userId).SingleOrDefault();
         }
+
+        public User GetUserByUserName(string userName)
+        {
+            return _context.Users.SingleOrDefault(u => u.Name == userName);
+        }
+
+        //public EditUserPanel GetUserForEditByAdmin(int userId)
+        //{
+        //    return _context.Users.Where(u => u.Id == userId).Select(u => new EditUserPanel()
+        //    {
+        //        UserName = u.Name,
+        //        Password = u.Password,
+        //        RePassword = u.Password
+        //    }).SingleOrDefault();
+        //}
+
+        //public List<int> GetUserPermissions(int userId)
+        //{
+        //    return _context.UsersPermissions.Where(up => up.UserId == userId).Select(up => up.UserId).ToList();
+        //}
 
         public List<User> GetUsers()
         {
-           return _context.Users.ToList();
+            return _context.Users.ToList();
         }
 
         public User LoginUser(string username, string password)
         {
             return _context.Users.SingleOrDefault(u => u.Name == username && u.Password == password);
+        }
+
+        public void RemoveUserByAdmin(User user)
+        {
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
     }
 }
