@@ -37,7 +37,7 @@ namespace EmploymentCore
 
                 if (!_permission.CheckUserPermission(_permissionId, userName))
                 {
-                    context.Result = new UnauthorizedResult();
+                    context.Result = new Microsoft.AspNetCore.Mvc.RedirectResult("/Home/AccessDenied");
 
                 }
 
@@ -46,7 +46,7 @@ namespace EmploymentCore
 
             else
             {
-                context.Result = new UnauthorizedResult();
+                context.Result = new Microsoft.AspNetCore.Mvc.RedirectResult("/Home/Login");
             }
         }
 
