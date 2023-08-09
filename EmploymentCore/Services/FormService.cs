@@ -23,7 +23,7 @@ namespace EmploymentCore
             _context.SaveChanges();
         }
 
-        public void ConfirmEmployee(int formId, string? comment)
+        public void ConfirmEmployee(int formId, string? comment, int userId)
         {
             var form = GetFormById(formId);
             form.Confirmation += 1;
@@ -35,20 +35,57 @@ namespace EmploymentCore
 
             _context.Update(form);
             _context.SaveChanges();
+
+            UserLog log = new UserLog()
+            {
+                UserId = userId,
+                CreationDate=DateTime.Now.toshamsi(),
+                Description=$"تایید فرم استخدام {form.LastName}"
+            };
+
+            _context.Add(log);
+            _context.SaveChanges();
+
         }
 
-        public void DeleteForm(int formId)
+        public void DeleteForm(int formId, int userId)
         {
             var form = GetFormById(formId);
             _context.Employees.Remove(form);
             _context.SaveChanges();
+
+            UserLog log = new UserLog()
+            {
+                CreationDate=DateTime.Now.toshamsi(),
+                UserId=userId,
+                Description=$"حذف فرم استخدام {form.LastName}"
+            };
+
+            _context.Add(log);
+            _context.SaveChanges();
         }
 
-        public void FinalConfirm(int formId)
+        public void FinalConfirm(int formId, int userId)
         {
             var form = GetFormById(formId);
             _context.Employees.Remove(form);
             _context.SaveChanges();
+
+
+
+            UserLog log = new UserLog()
+            {
+                CreationDate = DateTime.Now.toshamsi(),
+                UserId = userId,
+                Description = $"تایید نهایی فرم استخدام {form.LastName}"
+            };
+
+            _context.Add(log);
+            _context.SaveChanges();
+
+
+
+
 
             AcceptedEmployee employee = new AcceptedEmployee()
             {
@@ -67,7 +104,7 @@ namespace EmploymentCore
                 Marriege = form.Marriege,
                 Name = form.Name,
                 NumberOfChildren = form.NumberOfChildren,
-                PhoneNumber = form.PhoneNumber,              
+                PhoneNumber = form.PhoneNumber,
                 RequestedSalary = form.RequestedSalary,
                 Salary = form.Salary,
                 StartDate = form.StartDate,

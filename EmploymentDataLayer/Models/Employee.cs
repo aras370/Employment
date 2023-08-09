@@ -171,7 +171,8 @@ namespace EmploymentDataLayer
 
         public string DateTime { get; set; }
 
-        public int Confirmation { get; set; }
+
+        public int? Confirmation { get; set; }
 
 
 

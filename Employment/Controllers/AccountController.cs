@@ -11,10 +11,12 @@ namespace Employment.Controllers
     {
 
         IUser _user;
+        MyContext _context;
 
-        public AccountController(IUser user1)
+        public AccountController(IUser user1, MyContext myContext)
         {
             _user = user1;
+            _context = myContext;
         }
 
 
@@ -27,14 +29,14 @@ namespace Employment.Controllers
         [HttpPost]
         public IActionResult Login(LiginViewModel login)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(login);
             }
 
-            var user=_user.LoginUser(login.Name, login.Password);
+            var user = _user.LoginUser(login.Name, login.Password);
 
-            if(user == null)
+            if (user == null)
             {
                 ModelState.AddModelError("Name", "کاربری با این مشخصات وجود ندارد");
                 return View();
@@ -43,7 +45,7 @@ namespace Employment.Controllers
 
             var claims = new List<Claim>()
             {
-                 
+
                 new Claim(ClaimTypes.Name , user.Name),
             };
 
@@ -56,7 +58,21 @@ namespace Employment.Controllers
                 IsPersistent = login.RememberMe
             };
 
+
             HttpContext.SignInAsync(principal, properties);
+
+
+            var user1 = _user.GetUserByUserName(login.Name);
+
+            UserLog log = new UserLog()
+            {
+                CreationDate = DateTime.Now.toshamsi(),
+                UserId = user1.Id,
+                Description = "ورود به سیستم"
+            };
+
+            _context.Add(log);
+            _context.SaveChanges();
 
             return Redirect("/UserPanel/Panel/" + user.Id);
         }
@@ -68,6 +84,6 @@ namespace Employment.Controllers
         }
 
 
-      
+
     }
 }

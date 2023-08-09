@@ -43,36 +43,34 @@ namespace EmploymentCore
 
         public bool CheckUserPermission(int permissionId, string userName)
         {
-           
-
-                var userId = _context.Users.Single(u => u.Name == userName).Id;
-
-                List<int> userpermissions = _context.UsersPermissions.Where(up => up.UserId == userId).Select
-                    (ur => ur.PermissionId).ToList();
-
-                if (!userpermissions.Any())
-                {
-                    return false;
-                }
 
 
-                return true;
+            var userId = _context.Users.Single(u => u.Name == userName).Id;
+
+            List<int> userpermissions = _context.UsersPermissions.Where(up => up.UserId == userId).Select
+                (up => up.PermissionId).ToList();
 
 
-                //List<int> rolepermissions = _context.RolePermissions.Where(rp => rp.PermissionId == permissionId).
-                //    Select(rp => rp.RoleId).ToList();
-
-                //return rolepermissions.Any(rl => userroles.Contains(rl));
+            return userpermissions.Any(ur => userpermissions.Contains(permissionId));
 
 
         }
 
-        public void EditUser(EditUserPanel user)
+        public void EditUser(EditUserPanel user, string userName)
         {
             var newuser = GetUserByUserId(user.Id);
             newuser.Name = user.UserName;
             newuser.Password = user.Password;
             _context.Update(newuser);
+
+            UserLog log = new UserLog()
+            {
+                CreationDate=DateTime.Now.toshamsi(),
+                UserId=user.Id,
+                Description=" تغییر اطلاعات کاربری"
+            };
+
+            _context.Add(log);
             _context.SaveChanges();
         }
 
@@ -93,6 +91,11 @@ namespace EmploymentCore
             _context.SaveChanges();
         }
 
+        public List<UserLog> GetAllUserLog(int userId)
+        {
+            return _context.UserLogs.Include(up=>up.User).Where(ul=>ul.UserId == userId).ToList();
+        }
+
         public List<Permission> GetPermissions()
         {
             return _context.Permissions.Include(p => p.UsersPermissions).ToList();
@@ -108,20 +111,6 @@ namespace EmploymentCore
             return _context.Users.SingleOrDefault(u => u.Name == userName);
         }
 
-        //public EditUserPanel GetUserForEditByAdmin(int userId)
-        //{
-        //    return _context.Users.Where(u => u.Id == userId).Select(u => new EditUserPanel()
-        //    {
-        //        UserName = u.Name,
-        //        Password = u.Password,
-        //        RePassword = u.Password
-        //    }).SingleOrDefault();
-        //}
-
-        //public List<int> GetUserPermissions(int userId)
-        //{
-        //    return _context.UsersPermissions.Where(up => up.UserId == userId).Select(up => up.UserId).ToList();
-        //}
 
         public List<User> GetUsers()
         {

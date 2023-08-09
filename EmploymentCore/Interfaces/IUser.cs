@@ -14,7 +14,7 @@ namespace EmploymentCore
 
         User GetUserByUserId(int userId);
 
-        void EditUser(EditUserPanel user);
+        void EditUser(EditUserPanel user, string userName);
 
         List<User> GetUsers();
 
@@ -36,8 +36,9 @@ namespace EmploymentCore
         User GetUserByUserName(string userName);
 
 
-        //EditUserPanel GetUserForEditByAdmin(int userId);
+        List<UserLog> GetAllUserLog(int userId);
 
-        //List<int> GetUserPermissions(int userId);
+
+       
     }
 }

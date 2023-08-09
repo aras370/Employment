@@ -1,9 +1,9 @@
 ﻿@model Employee
+@inject IUser _user
 
-
-@*{
-    Layout = null;
-}*@
+@{
+    var user = _user.GetUserByUserName(User.Identity.Name);
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,6 @@
     <!--fontawesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- jquery -->
-  
     <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> -->
 </head>
 
@@ -55,7 +54,7 @@
             </div>
         </div>
     </div>
-
+    <input type="hidden" asp-for="Confirmation" />
     <!-- content2 -->
 
     <div class="content my-3">
@@ -161,7 +160,7 @@
                                     <i class="fa fa-font" aria-hidden="true"></i>
                                 </div>
                             </div>
-                            <input asp-for=Major type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
+                            <input asp-for="Major" type="text" class="form-control shadow-sm" style="direction: ltr;" readonly>
                         </div>
                     </div>
                 </div>
@@ -396,36 +395,14 @@
         </div>
     </div>
 
-    <!-- content14 -->
-    <!-- content15 -->
-    <!-- content16 -->
-    @* <footer class="content my-3">
-    <button onclick="showModal()">ثبت اطلاعات</button>
-    </footer>*@
-
-
-    <!-- modal -->
-    <div class="modal" tabindex="-1" id="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <i class="fa fa-check-square my-3" aria-hidden="true"></i>
-                <div class="modal-body text-center">
-                    <span class="font-weight-bold charge">مشخصات شما با موفقیت ثبت شد</span>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary hideButton" data-bs-dismiss="modal" onclick="hideBox()">بستن</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
-    <!---------- js  --------------->
-    <!-- jquery -->
+
     @if (Model.Confirmation == 0)
     {
         <form asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">
+            <input type="hidden" name="userId" value="@user.Id">
             <div class="content bg-white my-3 shadow-sm">
                 <div class="part py-3 px-1 my-2">
                     <p class="text-right px-3">دیدگاه کارشناس</p>
@@ -461,35 +438,48 @@
 
     @if (Model.Confirmation == 1 && Model.Comment == null)
     {
-        <div class="row me-auto">
-            <div class="col col-2">
+        <form action="Confirm">
 
-                <a class="btn btn-success" asp-action="Confirm" asp-route-formId="@Model.Id">تایید متقاضی</a>
+            <div class="row me-auto">
+                <div class="col col-2">
+                    <input type="hidden" name="userId" value="@user.Id">
+                    <input type="hidden" name="formId" value="@Model.Id">
+                    <input class="btn btn-success" type="submit" value="تایید متقاضی">
+                </div>
+
+                <div class="col col-1">
+                    <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+                </div>
+
             </div>
 
-            <div class="col col-1">
-                <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+        </form>
 
-            </div>
-
-        </div>
     }
 
 
     @if (Model.Confirmation == 2 && Model.Comment == null)
     {
-        <div class="row me-auto">
-            <div class="col col-2">
+        <form method="FinalConfirmation">
+            <input type="hidden" name="formId" value="@Model.Id">
+            <input type="hidden" name="userId" value="@user.Id">
 
-                <a class="btn btn-success" asp-action="FinalConfirmation" asp-route-formId="@Model.Id">تایید نهایی</a>
+            <div class="row me-auto">
+                <div class="col col-2">
+
+                    <input class="btn btn-success" type="submit" value="تایید نهایی">
+                </div>
+
+                <div class="col col-1">
+                    <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+                </div>
+
             </div>
 
-            <div class="col col-1">
-                <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+        </form>
 
-            </div>
-
-        </div>
     }
 
 
@@ -499,6 +489,7 @@
         @if (Model.Confirmation == 1)
         {
             <form asp-action="Confirm" asp-controller="Form" asp-route-formId="@Model.Id">
+                <input type="hidden" name="userId" value="@user.Id">
                 <div class="content bg-white my-3 shadow-sm">
                     <div class="part py-3 px-1 my-2">
                         <p class="text-right px-3">دیدگاه کارشناس</p>
@@ -531,34 +522,37 @@
 
         @if (Model.Confirmation == 2)
         {
+            <form asp-action="FinalConfirmation" asp-route-formId="@Model.Id">
 
-            <div class="content bg-white my-3 shadow-sm">
-                <div class="part py-3 px-1 my-2">
-                    <p class="text-right px-3">دیدگاه کارشناس</p>
-                    <div class="input-group mb-2 my-3 px-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i class="fa fa-font" aria-hidden="true"></i>
+                <div class="content bg-white my-3 shadow-sm">
+                    <div class="part py-3 px-1 my-2">
+                        <p class="text-right px-3">دیدگاه کارشناس</p>
+                        <div class="input-group mb-2 my-3 px-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-font" aria-hidden="true"></i>
+                                </div>
                             </div>
+                            <textarea asp-for=Comment type="text" class="form-control shadow-sm" cols="10" rows="3" readonly> </textarea>
                         </div>
-                        <textarea asp-for=Comment type="text" class="form-control shadow-sm" cols="10" rows="3" readonly> </textarea>
                     </div>
+
+                    <div class="row me-auto">
+                        <div class="col col-2">
+
+                            <input type="submit" class="btn btn-success" value="تایید نهایی">
+                        </div>
+
+                        <div class="col col-1">
+                            <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="row me-auto">
-                    <div class="col col-2">
-
-                        <a class="btn btn-success" asp-action="FinalConfirmation" asp-route-formId="@Model.Id">تایید نهایی</a>
-                    </div>
-
-                    <div class="col col-1">
-                        <a href="/Form/GetAllForms" class="btn btn-primary">بازگشت</a>
-
-                    </div>
-
-                </div>
-
-            </div>
+            </form>
         }
     }
 

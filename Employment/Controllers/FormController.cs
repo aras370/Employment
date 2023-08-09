@@ -12,11 +12,13 @@ namespace Employment.Controllers
 
         IForm _form;
         IUser _user;
-
-        public FormController(IForm form, IUser user)
+        MyContext _context;
+        public FormController(IForm form, IUser user, MyContext context)
         {
             _form = form;
             _user = user;
+            _context = context;
+
         }
 
 
@@ -44,7 +46,10 @@ namespace Employment.Controllers
 
         public IActionResult GetAllForms()
         {
-            var user=_user.GetUserByUserName(User.Identity.Name);
+            var user = _user.GetUserByUserName(User.Identity.Name);
+
+
+
             var form = _form.GetEmployeesForUser(user.Id);
 
             return View(form);
@@ -54,32 +59,38 @@ namespace Employment.Controllers
         public IActionResult GetFormById(int id)
         {
             var form = _form.GetFormById(id);
+
             return View(form);
 
         }
 
 
 
-        public ActionResult Confirm(int formId, string? comment)
+        public ActionResult Confirm(int formId, string? comment,int userId)
         {
 
-            _form.ConfirmEmployee(formId, comment);
+            _form.ConfirmEmployee(formId, comment,userId);
 
 
             return RedirectToAction("GetAllForms");
         }
+
+
+
 
         public IActionResult DeleteForm(int formId)
         {
-            _form.DeleteForm(formId);
+            var user = _user.GetUserByUserName(User.Identity.Name);
+
+            _form.DeleteForm(formId,user.Id);
 
             return RedirectToAction("GetAllForms");
         }
 
-        public IActionResult FinalConfirmation(int formId)
+        public IActionResult FinalConfirmation(int formId, int userId)
         {
 
-            _form.FinalConfirm(formId);
+            _form.FinalConfirm(formId, userId);
 
             return RedirectToAction("GetAllForms");
         }

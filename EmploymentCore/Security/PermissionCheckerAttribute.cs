@@ -1,4 +1,4 @@
-﻿
+﻿using EmploymentCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -7,16 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
-namespace EmploymentCore
+namespace Core
 {
-    public class PermissionCheckerAttribute : System.Web.Mvc.AuthorizeAttribute, System.Web.Mvc.IAuthorizationFilter
+    public class PermissionCheckerAttribute : AuthorizeAttribute, IAuthorizationFilter
     {
-
         int _permissionId = 0;
 
-        IUser _permission;
+        IUser _user;
 
         public PermissionCheckerAttribute(int permissionId)
         {
@@ -25,19 +23,18 @@ namespace EmploymentCore
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            _permission = (IUser)context.HttpContext.RequestServices.GetService(typeof(IUser));
+
+            _user = (IUser)context.HttpContext.RequestServices.GetService(typeof(IUser));
 
 
             if (context.HttpContext.User.Identity.IsAuthenticated)
             {
 
-                
-
                 var userName = context.HttpContext.User.Identity.Name;
 
-                if (!_permission.CheckUserPermission(_permissionId, userName))
+                if (!_user.CheckUserPermission(_permissionId, userName))
                 {
-                    context.Result = new Microsoft.AspNetCore.Mvc.RedirectResult("/Home/AccessDenied");
+                    context.Result = new RedirectResult("/Home/AccessDenied");
 
                 }
 
@@ -46,9 +43,8 @@ namespace EmploymentCore
 
             else
             {
-                context.Result = new Microsoft.AspNetCore.Mvc.RedirectResult("/Home/Login");
+                context.Result = new RedirectResult("/Home/Login");
             }
         }
-
     }
 }

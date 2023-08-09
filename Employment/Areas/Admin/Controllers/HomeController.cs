@@ -1,4 +1,5 @@
-﻿using EmploymentCore;
+﻿using Core;
+using EmploymentCore;
 using EmploymentDataLayer;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,12 +37,12 @@ namespace Employment.Areas.Admin.Controllers
                 return View(user);
             }
 
-            if (SelectedPermissions.Count==0)
+            if (SelectedPermissions.Count == 0)
             {
                 ModelState.AddModelError("Name", "لطفا برای کاربر سطح دسترسی تعیین کنید");
                 return View();
             }
-            
+
             _user.AddUserByAdmin(user, SelectedPermissions);
 
             return RedirectToAction("Index");
@@ -51,14 +52,14 @@ namespace Employment.Areas.Admin.Controllers
 
         public IActionResult Edit(int userId)
         {
-            var user=_user.GetUserByUserId(userId);
-           
+            var user = _user.GetUserByUserId(userId);
+
             return View(user);
         }
 
 
         [HttpPost]
-        public IActionResult Edit(User user,List<int> SelectedPermissions)
+        public IActionResult Edit(User user, List<int> SelectedPermissions)
         {
             if (!ModelState.IsValid)
             {
@@ -66,13 +67,13 @@ namespace Employment.Areas.Admin.Controllers
             }
 
 
-            if (SelectedPermissions.Count==0)
+            if (SelectedPermissions.Count == 0)
             {
                 ModelState.AddModelError("Name", "لطفا برای کاربر سطح دسترسی تعیین کنید");
                 return View();
             }
 
-            _user.EditUserByAdmin(user,SelectedPermissions);
+            _user.EditUserByAdmin(user, SelectedPermissions);
 
             return RedirectToAction("Index");
         }
@@ -87,8 +88,14 @@ namespace Employment.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(User user)
         {
-            _user.RemoveUserByAdmin(user);   
+            _user.RemoveUserByAdmin(user);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult ShowActivities(int userId)
+        {
+            var logs=_user.GetAllUserLog(userId);
+            return View(logs);
         }
     }
 }

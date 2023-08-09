@@ -21,6 +21,7 @@
                     <td>@item.Name</td>
                     <td>
                         <a class="btn btn-warning" asp-action="Edit"  asp-route-userId="@item.Id">ویرایش</a> | <a class="btn btn-danger" asp-action="Delete" asp-route-userId="@item.Id">حذف</a>
+                        | <a class="btn btn-primary" asp-action="ShowActivities" asp-route-userId="@item.Id">فعالیت های اخیر</a>
                     </td>
 
                 </tr>

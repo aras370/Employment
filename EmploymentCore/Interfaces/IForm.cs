@@ -15,11 +15,11 @@ namespace EmploymentCore
 
         Employee GetFormById(int id);
 
-        void ConfirmEmployee(int formId,string? comment);
+        void ConfirmEmployee(int formId,string? comment,int userId);
 
-        void DeleteForm(int formId);
+        void DeleteForm(int formId,int userId);
 
-        void FinalConfirm(int formId);
+        void FinalConfirm(int formId, int userId);
 
         List<AcceptedEmployee> GetAcceptedEmployees();
 

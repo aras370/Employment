@@ -20,7 +20,9 @@ namespace EmploymentDataLayer
 
         #region Relations
 
-        public List<UsersPermission>? UsersPermissions { get; set; }
+        public List<UsersPermission> UsersPermissions { get; set; }
+
+        public List<UserLog> UserLogs { get; set; }
 
         #endregion
     }

@@ -42,7 +42,7 @@ namespace Employment.Controllers
                 return View(user);
             }
 
-            _user.EditUser(user);
+            _user.EditUser(user,user.UserName);
 
 
             return Redirect("/UserPanel/Panel/" + user.Id);
