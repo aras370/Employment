@@ -62,6 +62,7 @@ namespace EmploymentCore
             newuser.Name = user.UserName;
             newuser.Password = user.Password;
             _context.Update(newuser);
+            _context.SaveChanges();
 
             UserLog log = new UserLog()
             {
@@ -93,7 +94,7 @@ namespace EmploymentCore
 
         public List<UserLog> GetAllUserLog(int userId)
         {
-            return _context.UserLogs.Include(up=>up.User).Where(ul=>ul.UserId == userId).ToList();
+            return _context.UserLogs.Include(up=>up.User).Where(ul=>ul.UserId == userId).OrderByDescending(ur=>ur.LogId).ToList();
         }
 
         public List<Permission> GetPermissions()
