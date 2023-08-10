@@ -403,7 +403,7 @@
     {
         <form asp-action="Confirm" asp-controller="Form">
             <input type="hidden" name="userId" value="@user.Id">
-            <input type="hidden" name="formId" value="@Model.Id">
+            <input type="hidden" name="formId" value="@Model?.Id">
             <div class="content bg-white my-3 shadow-sm">
                 <div class="part py-3 px-1 my-2">
                     <p class="text-right px-3">دیدگاه کارشناس</p>
@@ -444,7 +444,7 @@
             <div class="row me-auto">
                 <div class="col col-2">
                     <input type="hidden" name="userId" value="@user.Id">
-                    <input type="hidden" name="formId" value="@Model.Id">
+                    <input type="hidden" name="formId" value="@Model?.Id">
                     <input class="btn btn-success" type="submit" value="تایید متقاضی">
                 </div>
 
@@ -463,7 +463,7 @@
     @if (Model?.Confirmation == 2 && Model?.Comment == null)
     {
         <form asp-action="FinalConfirmation" asp-controller="Form">
-            <input type="hidden" name="formId" value="@Model.Id">
+            <input type="hidden" name="formId" value="@Model?.Id">
             <input type="hidden" name="userId" value="@user.Id">
 
             <div class="row me-auto">
@@ -491,7 +491,7 @@
         {
             <form asp-action="Confirm" asp-controller="Form">
                 <input type="hidden" name="userId" value="@user.Id">
-                <input type="hidden" name="formId" value="@Model.Id">
+                <input type="hidden" name="formId" value="@Model?.Id">
 
                 <div class="content bg-white my-3 shadow-sm">
                     <div class="part py-3 px-1 my-2">
@@ -527,7 +527,7 @@
         {
             <form asp-action="FinalConfirmation" asp-controller="Form">
                 <input type="hidden" name="userId" value="@user.Id">
-                <input type="hidden" name="formId" value="@Model.Id">
+                <input type="hidden" name="formId" value="@Model?.Id">
                 <div class="content bg-white my-3 shadow-sm">
                     <div class="part py-3 px-1 my-2">
                         <p class="text-right px-3">دیدگاه کارشناس</p>
