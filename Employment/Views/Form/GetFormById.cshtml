@@ -399,7 +399,7 @@
 
 
 
-    @if (Model.Confirmation == 0)
+    @if (Model?.Confirmation == 0)
     {
         <form asp-action="Confirm" asp-controller="Form">
             <input type="hidden" name="userId" value="@user.Id">
@@ -437,7 +437,7 @@
 
 
 
-    @if (Model.Confirmation == 1 && Model.Comment == null)
+    @if (Model?.Confirmation == 1 && Model?.Comment == null)
     {
         <form asp-action="Confirm" asp-controller="Form">
 
@@ -460,7 +460,7 @@
     }
 
 
-    @if (Model.Confirmation == 2 && Model.Comment == null)
+    @if (Model?.Confirmation == 2 && Model?.Comment == null)
     {
         <form asp-action="FinalConfirmation" asp-controller="Form">
             <input type="hidden" name="formId" value="@Model.Id">
@@ -484,10 +484,10 @@
     }
 
 
-    @if (Model.Comment != null)
+    @if (Model?.Comment != null)
     {
 
-        @if (Model.Confirmation == 1)
+        @if (Model?.Confirmation == 1)
         {
             <form asp-action="Confirm" asp-controller="Form">
                 <input type="hidden" name="userId" value="@user.Id">
@@ -523,7 +523,7 @@
 
         }
 
-        @if (Model.Confirmation == 2)
+        @if (Model?.Confirmation == 2)
         {
             <form asp-action="FinalConfirmation" asp-controller="Form">
                 <input type="hidden" name="userId" value="@user.Id">
