@@ -42,8 +42,9 @@ namespace Employment.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "لطفا برای کاربر سطح دسترسی تعیین کنید");
                 return View();
             }
+            var admin = _user.GetUserByUserName(User.Identity.Name);
 
-            _user.AddUserByAdmin(user, SelectedPermissions);
+            _user.AddUserByAdmin(user, SelectedPermissions, admin.Id);
 
             return RedirectToAction("Index");
 
@@ -72,8 +73,8 @@ namespace Employment.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "لطفا برای کاربر سطح دسترسی تعیین کنید");
                 return View();
             }
-
-            _user.EditUserByAdmin(user, SelectedPermissions);
+            var admin = _user.GetUserByUserName(User.Identity.Name);
+            _user.EditUserByAdmin(user, SelectedPermissions,admin.Id);
 
             return RedirectToAction("Index");
         }

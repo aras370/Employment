@@ -19,7 +19,7 @@ namespace EmploymentCore
             _context = myContext;
         }
 
-        public void AddUserByAdmin(EditUserPanel user, List<int> permissions)
+        public void AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId)
         {
             User newuser = new User()
             {
@@ -37,9 +37,55 @@ namespace EmploymentCore
                     PermissionId = permission
                 };
                 _context.Add(usersPermission);
+                _context.SaveChanges();
             };
+
+
+            UserLog log = new UserLog()
+            {
+                CreationDate = DateTime.Now.toshamsi(),
+                UserId = adminId,
+                Description = $"افزودن کاربر {newuser.Name}"
+            };
+            _context.Add(log);
             _context.SaveChanges();
         }
+
+
+
+        public void EditUserByAdmin(User user, List<int> permissions, int adminId)
+        {
+            _context.Users.Update(user);
+            _context.SaveChanges();
+            _context.UsersPermissions.Where(up => up.UserId == user.Id).ToList().ForEach(p => _context.UsersPermissions.Remove(p));
+            foreach (var permission in permissions)
+            {
+                UsersPermission usersPermission = new UsersPermission()
+                {
+                    UserId = user.Id,
+                    PermissionId = permission
+                };
+                _context.Add(usersPermission);
+                _context.SaveChanges();
+            };
+
+
+            UserLog log = new UserLog()
+            {
+                CreationDate = DateTime.Now.toshamsi(),
+                UserId = adminId,
+                Description = $"تغییر اطلاعات کاربری یا دسترسی های {user.Name}"
+            };
+            _context.Add(log);
+            _context.SaveChanges();
+
+
+
+        }
+
+
+
+
 
         public bool CheckUserPermission(int permissionId, string userName)
         {
@@ -66,35 +112,20 @@ namespace EmploymentCore
 
             UserLog log = new UserLog()
             {
-                CreationDate=DateTime.Now.toshamsi(),
-                UserId=user.Id,
-                Description=" تغییر اطلاعات کاربری"
+                CreationDate = DateTime.Now.toshamsi(),
+                UserId = user.Id,
+                Description = " تغییر اطلاعات کاربری"
             };
 
             _context.Add(log);
             _context.SaveChanges();
         }
 
-        public void EditUserByAdmin(User user, List<int> permissions)
-        {
-            _context.Users.Update(user);
-            _context.SaveChanges();
-            _context.UsersPermissions.Where(up => up.UserId == user.Id).ToList().ForEach(p => _context.UsersPermissions.Remove(p));
-            foreach (var permission in permissions)
-            {
-                UsersPermission usersPermission = new UsersPermission()
-                {
-                    UserId = user.Id,
-                    PermissionId = permission
-                };
-                _context.Add(usersPermission);
-            };
-            _context.SaveChanges();
-        }
+
 
         public List<UserLog> GetAllUserLog(int userId)
         {
-            return _context.UserLogs.Include(up=>up.User).Where(ul=>ul.UserId == userId).OrderByDescending(ur=>ur.LogId).ToList();
+            return _context.UserLogs.Include(up => up.User).Where(ul => ul.UserId == userId).OrderByDescending(ur => ur.LogId).ToList();
         }
 
         public List<Permission> GetPermissions()

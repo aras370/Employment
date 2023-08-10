@@ -21,10 +21,10 @@ namespace EmploymentCore
         List<Permission> GetPermissions();
 
 
-        void AddUserByAdmin(EditUserPanel user, List<int> permissions);
+        void AddUserByAdmin(EditUserPanel user, List<int> permissions,int adminId);
 
 
-        void EditUserByAdmin(User user, List<int> permissions);
+        void EditUserByAdmin(User user, List<int> permissions,int admiId);
 
 
         void RemoveUserByAdmin(User user);
