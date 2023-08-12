@@ -12,6 +12,9 @@ namespace EmploymentCore
 
         User LoginUser(string username, string password);
 
+
+        bool IsExistUser(string username);
+
         User GetUserByUserId(int userId);
 
         void EditUser(EditUserPanel user, string userName);

@@ -23,8 +23,8 @@ namespace EmploymentCore
         {
             User newuser = new User()
             {
-                Name = user.UserName,
-                Password = user.Password
+                Name = user.UserName.Trim(),
+                Password = user.Password.Trim(),
             };
 
             _context.Users.Add(newuser);
@@ -79,8 +79,6 @@ namespace EmploymentCore
             _context.Add(log);
             _context.SaveChanges();
 
-
-
         }
 
 
@@ -105,8 +103,8 @@ namespace EmploymentCore
         public void EditUser(EditUserPanel user, string userName)
         {
             var newuser = GetUserByUserId(user.Id);
-            newuser.Name = user.UserName;
-            newuser.Password = user.Password;
+            newuser.Name = user.UserName.Trim();
+            newuser.Password = user.Password.Trim();
             _context.Update(newuser);
             _context.SaveChanges();
 
@@ -151,7 +149,7 @@ namespace EmploymentCore
 
         public User LoginUser(string username, string password)
         {
-            return _context.Users.SingleOrDefault(u => u.Name == username && u.Password == password);
+            return _context.Users.SingleOrDefault(u => u.Name == username.Trim() && u.Password == password.Trim());
         }
 
         public void RemoveUserByAdmin(User user)
@@ -159,6 +157,11 @@ namespace EmploymentCore
 
             _context.Users.Remove(user);
             _context.SaveChanges();
+        }
+
+        public bool IsExistUser(string username)
+        {
+           return _context.Users.Any(u=>u.Name == username.Trim());
         }
     }
 }

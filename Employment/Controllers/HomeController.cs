@@ -11,12 +11,14 @@ namespace Employment.Controllers
     {
 
         private readonly ILogger<HomeController> _logger;
-        IForm _form;
-        public HomeController(ILogger<HomeController> logger,IForm form)
+
+    
+        public HomeController(ILogger<HomeController> logger)
         {
-            _form = form;
+     
             _logger = logger;
         }
+
 
         public IActionResult Index()
         {
@@ -31,6 +33,9 @@ namespace Employment.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
 
         public IActionResult AccessDenied()
         {

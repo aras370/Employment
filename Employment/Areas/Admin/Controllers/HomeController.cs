@@ -37,11 +37,19 @@ namespace Employment.Areas.Admin.Controllers
                 return View(user);
             }
 
+            if (_user.IsExistUser(user.UserName.Trim()))
+            {
+                ModelState.AddModelError("Name", "این نام کاربری از قبل وجود دارد");
+                return View();
+            }
+
+
             if (SelectedPermissions.Count == 0)
             {
                 ModelState.AddModelError("Name", "لطفا برای کاربر سطح دسترسی تعیین کنید");
                 return View();
             }
+
             var admin = _user.GetUserByUserName(User.Identity.Name);
 
             _user.AddUserByAdmin(user, SelectedPermissions, admin.Id);

@@ -66,7 +66,7 @@ namespace Employment.Controllers
 
 
 
-        public ActionResult Confirm(int formId, string? comment,int userId)
+        public IActionResult Confirm(int formId, string? comment,int userId)
         {
 
             _form.ConfirmEmployee(formId, comment,userId);
