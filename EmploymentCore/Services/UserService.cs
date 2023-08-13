@@ -7,16 +7,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EmploymentCore
+
 {
 
     public class UserService : IUser
+
     {
+
+
         MyContext _context;
 
 
         public UserService(MyContext myContext)
         {
             _context = myContext;
+
+
         }
 
         public void AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId)
@@ -100,7 +106,10 @@ namespace EmploymentCore
 
         }
 
-        public void EditUser(EditUserPanel user, string userName)
+
+
+        public void EditUser(EditUserPanel user
+            )
         {
             var newuser = GetUserByUserId(user.Id);
             newuser.Name = user.UserName.Trim();
@@ -126,15 +135,19 @@ namespace EmploymentCore
             return _context.UserLogs.Include(up => up.User).Where(ul => ul.UserId == userId).OrderByDescending(ur => ur.LogId).ToList();
         }
 
+
         public List<Permission> GetPermissions()
         {
             return _context.Permissions.Include(p => p.UsersPermissions).ToList();
         }
 
+
+
         public User GetUserByUserId(int userId)
         {
             return _context.Users.Include(u => u.UsersPermissions).Where(u => u.Id == userId).SingleOrDefault();
         }
+
 
         public User GetUserByUserName(string userName)
         {
@@ -147,21 +160,33 @@ namespace EmploymentCore
             return _context.Users.ToList();
         }
 
+
         public User LoginUser(string username, string password)
         {
             return _context.Users.SingleOrDefault(u => u.Name == username.Trim() && u.Password == password.Trim());
         }
 
-        public void RemoveUserByAdmin(User user)
+
+        public void RemoveUserByAdmin(User user,int adminId)
         {
 
             _context.Users.Remove(user);
+            _context.SaveChanges();
+
+            UserLog log = new UserLog()
+            {
+                UserId=adminId,
+                CreationDate=DateTime.Now.toshamsi(),
+                Description=$"حذف کاربر {user.Name}"
+            };
+
+            _context.Add(log);
             _context.SaveChanges();
         }
 
         public bool IsExistUser(string username)
         {
-           return _context.Users.Any(u=>u.Name == username.Trim());
+            return _context.Users.Any(u => u.Name == username.Trim());
         }
     }
 }

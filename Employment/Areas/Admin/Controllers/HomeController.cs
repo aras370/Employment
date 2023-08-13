@@ -52,7 +52,11 @@ namespace Employment.Areas.Admin.Controllers
 
             var admin = _user.GetUserByUserName(User.Identity.Name);
 
+
             _user.AddUserByAdmin(user, SelectedPermissions, admin.Id);
+
+
+
 
             return RedirectToAction("Index");
 
@@ -81,7 +85,11 @@ namespace Employment.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "لطفا برای کاربر سطح دسترسی تعیین کنید");
                 return View();
             }
+
+
             var admin = _user.GetUserByUserName(User.Identity.Name);
+
+
             _user.EditUserByAdmin(user, SelectedPermissions,admin.Id);
 
             return RedirectToAction("Index");
@@ -97,7 +105,8 @@ namespace Employment.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(User user)
         {
-            _user.RemoveUserByAdmin(user);
+            var admin = _user.GetUserByUserName(User.Identity.Name);
+            _user.RemoveUserByAdmin(user,admin.Id);
             return RedirectToAction("Index");
         }
 

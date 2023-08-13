@@ -17,7 +17,7 @@ namespace EmploymentCore
 
         User GetUserByUserId(int userId);
 
-        void EditUser(EditUserPanel user, string userName);
+        void EditUser(EditUserPanel user);
 
         List<User> GetUsers();
 
@@ -30,7 +30,7 @@ namespace EmploymentCore
         void EditUserByAdmin(User user, List<int> permissions,int admiId);
 
 
-        void RemoveUserByAdmin(User user);
+        void RemoveUserByAdmin(User user, int adminId);
 
 
         bool CheckUserPermission(int permissionId, string userName);

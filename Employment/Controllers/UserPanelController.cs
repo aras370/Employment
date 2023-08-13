@@ -42,7 +42,14 @@ namespace Employment.Controllers
                 return View(user);
             }
 
-            _user.EditUser(user,user.UserName);
+            if (_user.IsExistUser(user.UserName))
+            {
+                ModelState.AddModelError("UserName", "این نام کاربری از قبل انتخاب شده است");
+                return View();
+            }
+
+
+            _user.EditUser(user);
 
 
             return Redirect("/UserPanel/Panel/" + user.Id);
