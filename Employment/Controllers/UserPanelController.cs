@@ -15,6 +15,8 @@ namespace Employment.Controllers
         }
 
 
+
+
         public IActionResult Panel(int id)
         {
             var user = _user.GetUserByUserId(id);
