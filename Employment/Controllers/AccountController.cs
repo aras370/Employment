@@ -83,7 +83,10 @@ namespace Employment.Controllers
             return Redirect("/");
         }
 
-
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
     }
 }

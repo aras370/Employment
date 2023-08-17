@@ -1,12 +1,12 @@
 ﻿@model EmploymentDataLayer.EditUserPanel
 @inject IUser _user
-
+@inject IAdmin _admin
 @{
     var permissions = _user.GetPermissions();
-
+    var departments = _admin.GetDepartmentForAdmin();
 }
 
-<form method="post" >
+<form method="post">
 
     <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-2 col-form-label">نام کاربری:</label>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-   
+
     <div class="row mb-3">
         <label for="inputPassword3" class="col-sm-2 col-form-label">کلمه عبور:</label>
         <div class="col-sm-3">
@@ -31,6 +31,26 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <h5>بخش</h5>
+
+    </div>
+
+    <div class="row mb-3">
+        <ul>
+
+            @foreach (var item in departments)
+            {
+                <li>
+                    <input class="radio" type="checkbox" name="selectedDepartment" value="@item.DepartmentId"> @item.Name
+                   
+                </li>
+            }
+            
+
+        </ul>
+    </div>
+
     <div class="text-danger" asp-validation-summary="All"></div>
 
     <pre>
@@ -38,7 +58,7 @@
 
     <div class="form-group">
         <div class="row">
-           دسترسی های کاربر
+            دسترسی های کاربر
         </div>
         <hr />
         <ul>
@@ -56,3 +76,19 @@
     <button type="submit" class="btn btn-success">افزودن</button>
     <a asp-action="Index" class="btn btn-primary">بازگشت</a>
 </form>
+
+
+@section Scripts {
+    <script>
+        $("input:checkbox").on('click', function () {
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                $(group).prop("checked", false);
+                $box.prop("checked", true);
+            } else {
+                $box.prop("checked", false);
+            }
+        });
+    </script>
+};

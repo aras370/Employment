@@ -24,13 +24,7 @@ namespace EmploymentCore
         List<Permission> GetPermissions();
 
 
-        void AddUserByAdmin(EditUserPanel user, List<int> permissions,int adminId);
-
-
-        void EditUserByAdmin(User user, List<int> permissions,int admiId);
-
-
-        void RemoveUserByAdmin(User user, int adminId);
+      
 
 
         bool CheckUserPermission(int permissionId, string userName);
@@ -41,7 +35,8 @@ namespace EmploymentCore
 
         List<UserLog> GetAllUserLog(int userId);
 
+        List<User> GetUserForDepartment(string name);
 
-       
+
     }
 }

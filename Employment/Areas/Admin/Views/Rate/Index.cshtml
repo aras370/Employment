@@ -1,0 +1,38 @@
+﻿@model List<EmployeeUser>
+@{
+    ViewData["Title"] = "کاربران";
+
+}
+
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col"> نام  </th>
+                <th scope="col">عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Name</td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="Rate" asp-controller="Rate" asp-area="Admin" asp-route-employeeId="@item.EmployeeUserId">امتیازدهی</a> 
+
+                      
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <pre></pre>
+
+   
+    <a href="/" class="btn btn-primary">بازگشت</a>
+
+
+</div>

@@ -21,8 +21,22 @@
         </div>
     </div>
 
+    <div class="row mb-3" >
+        <h5>بخش</h5>
 
-  
+    </div>
+    <input type="hidden" asp-for="DepartmentId" />
+    <div class="row mb-3">
+        <ul>
+            <li>
+                <input class="radio" type="checkbox" name="selectedDepartment" value="1"> اداری 
+                <input class="radio" type="checkbox" name="selectedDepartment" value="2"> آشپزخانه 
+                <input class="radio" type="checkbox" name="selectedDepartment" value="3"> هتل 
+            </li>
+
+        </ul>
+    </div>
+
     <div class="text-danger" asp-validation-summary="All"></div>
 
     <pre>
@@ -48,3 +62,18 @@
     <button type="submit" class="btn btn-success">ویرایش</button>
     <a asp-action="Index" class="btn btn-primary">بازگشت</a>
 </form>
+
+@section Scripts {
+    <script>
+        $(".radio").on('click', function () {
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                $(group).prop("checked", false);
+                $box.prop("checked", true);
+            } else {
+                $box.prop("checked", false);
+            }
+        });
+    </script>
+};

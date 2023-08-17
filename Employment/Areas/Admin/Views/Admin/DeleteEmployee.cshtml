@@ -1,0 +1,27 @@
+﻿@model EmployeeUser
+
+
+
+<div class="row justify-content-center">
+
+    <div class=" card mt-3" style="width: 18rem;">
+
+        <form method="post">
+            <input type="hidden" asp-for="EmployeeUserId" />
+            <input type="hidden" asp-for="DepartmentId" />
+            <div class="card-body">
+                <h5 class="card-title">حذف کاربر</h5>
+                <hr />
+                <p class="card-text">آیا از حذف کاربر مطمئن هستید؟</p>
+                <div class="row align-items-center">
+                    <label class="col-auto m-1">نام پرسنل:  </label>
+                    <input asp-for=Name class="col-auto form-control" readonly />
+                </div>
+                <pre></pre>
+                <button type="submit" class="btn btn-danger">حذف</button>
+                <a href="/Admin" class="btn btn-primary">بازگشت</a>
+            </div>
+        </form>
+
+    </div>
+</div>

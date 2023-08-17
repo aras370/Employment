@@ -31,65 +31,51 @@ namespace EmploymentDataLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BirthDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CauseOfLeave")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CodeMelli")
                         .HasColumnType("int");
 
                     b.Property<string>("DateTime")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EducationLevel")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EndDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FhatherName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Formerjob")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InformaionOfFormerBoss")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Major")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Marriege")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumberOfChildren")
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RequestedSalary")
@@ -99,11 +85,9 @@ namespace EmploymentDataLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StartDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Univercity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -223,6 +207,60 @@ namespace EmploymentDataLayer.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("EmploymentDataLayer.EmployeeUser", b =>
+                {
+                    b.Property<int>("EmployeeUserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeUserId"), 1L, 1);
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeUserId");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("EmployeeUsers");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.FieldOfRating", b =>
+                {
+                    b.Property<int>("FieldOfRatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FieldOfRatingId"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FieldOfRatingId");
+
+                    b.ToTable("FieldOfRatings");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.HotelDepartment", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("HotelDepartments");
+                });
+
             modelBuilder.Entity("EmploymentDataLayer.Permission", b =>
                 {
                     b.Property<int>("PermissionId")
@@ -232,12 +270,58 @@ namespace EmploymentDataLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PermissionId"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PermissionId");
 
                     b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.Rate", b =>
+                {
+                    b.Property<int>("RateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RateId"), 1L, 1);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DepartmentID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FieldOfRatingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.HasKey("RateId");
+
+                    b.HasIndex("DepartmentID");
+
+                    b.HasIndex("EmployeeUserId");
+
+                    b.HasIndex("FieldOfRatingId");
+
+                    b.HasIndex("ManagerId");
+
+                    b.ToTable("Rates");
                 });
 
             modelBuilder.Entity("EmploymentDataLayer.User", b =>
@@ -248,15 +332,20 @@ namespace EmploymentDataLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("DepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId")
+                        .IsUnique()
+                        .HasFilter("[DepartmentId] IS NOT NULL");
 
                     b.ToTable("Users");
                 });
@@ -270,11 +359,9 @@ namespace EmploymentDataLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LogId"), 1L, 1);
 
                     b.Property<string>("CreationDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
@@ -310,12 +397,67 @@ namespace EmploymentDataLayer.Migrations
                     b.ToTable("UsersPermissions");
                 });
 
+            modelBuilder.Entity("EmploymentDataLayer.EmployeeUser", b =>
+                {
+                    b.HasOne("EmploymentDataLayer.HotelDepartment", "HotelDepartment")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("HotelDepartment");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.Rate", b =>
+                {
+                    b.HasOne("EmploymentDataLayer.HotelDepartment", "HotelDepartment")
+                        .WithMany("Rates")
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("EmploymentDataLayer.EmployeeUser", "EmployeeUser")
+                        .WithMany("Rates")
+                        .HasForeignKey("EmployeeUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("EmploymentDataLayer.FieldOfRating", "FieldOfRating")
+                        .WithMany("Rates")
+                        .HasForeignKey("FieldOfRatingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("EmploymentDataLayer.User", "User")
+                        .WithMany("Rates")
+                        .HasForeignKey("ManagerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("EmployeeUser");
+
+                    b.Navigation("FieldOfRating");
+
+                    b.Navigation("HotelDepartment");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.User", b =>
+                {
+                    b.HasOne("EmploymentDataLayer.HotelDepartment", "HotelDepartment")
+                        .WithOne("User")
+                        .HasForeignKey("EmploymentDataLayer.User", "DepartmentId");
+
+                    b.Navigation("HotelDepartment");
+                });
+
             modelBuilder.Entity("EmploymentDataLayer.UserLog", b =>
                 {
                     b.HasOne("EmploymentDataLayer.User", "User")
                         .WithMany("UserLogs")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("User");
@@ -326,16 +468,33 @@ namespace EmploymentDataLayer.Migrations
                     b.HasOne("EmploymentDataLayer.Permission", "Permission")
                         .WithMany("UsersPermissions")
                         .HasForeignKey("PermissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("EmploymentDataLayer.User", "User")
                         .WithMany("UsersPermissions")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Permission");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.EmployeeUser", b =>
+                {
+                    b.Navigation("Rates");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.FieldOfRating", b =>
+                {
+                    b.Navigation("Rates");
+                });
+
+            modelBuilder.Entity("EmploymentDataLayer.HotelDepartment", b =>
+                {
+                    b.Navigation("Rates");
 
                     b.Navigation("User");
                 });
@@ -347,6 +506,8 @@ namespace EmploymentDataLayer.Migrations
 
             modelBuilder.Entity("EmploymentDataLayer.User", b =>
                 {
+                    b.Navigation("Rates");
+
                     b.Navigation("UserLogs");
 
                     b.Navigation("UsersPermissions");

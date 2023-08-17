@@ -34,7 +34,7 @@ namespace Core
 
                 if (!_user.CheckUserPermission(_permissionId, userName))
                 {
-                    context.Result = new RedirectResult("/Home/AccessDenied");
+                    context.Result = new RedirectResult("/Account/AccessDenied");
 
                 }
 

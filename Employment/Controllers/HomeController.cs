@@ -9,14 +9,16 @@ namespace Employment.Controllers
 {
     public class HomeController : Controller
     {
+        IUser _user;
 
         private readonly ILogger<HomeController> _logger;
 
-    
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger,IUser user)
         {
-     
+
             _logger = logger;
+            _user = user;
         }
 
 
@@ -25,7 +27,7 @@ namespace Employment.Controllers
             return View();
         }
 
-       
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -35,12 +37,15 @@ namespace Employment.Controllers
         }
 
 
-
-
-        public IActionResult AccessDenied()
+        public IActionResult GetAllEmployeeUser()
         {
+            var managerId = _user.GetUserByUserName(User.Identity.Name).Id;
+
+
             return View();
         }
+
+
 
 
 

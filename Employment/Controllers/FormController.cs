@@ -1,4 +1,5 @@
-﻿using EmploymentCore;
+﻿using Core;
+using EmploymentCore;
 using EmploymentDataLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Employment.Controllers
 {
 
-    [Authorize]
+   
     public class FormController : Controller
     {
 
@@ -44,6 +45,7 @@ namespace Employment.Controllers
         }
 
 
+        [PermissionChecker(2)]
         public IActionResult GetAllForms()
         {
             var user = _user.GetUserByUserName(User.Identity.Name);
@@ -55,6 +57,7 @@ namespace Employment.Controllers
             return View(form);
         }
 
+        [PermissionChecker(2)]
 
         public IActionResult GetFormById(int id)
         {
@@ -65,7 +68,7 @@ namespace Employment.Controllers
         }
 
 
-
+        [PermissionChecker(2)]
         public IActionResult Confirm(int formId, string? comment,int userId)
         {
 
@@ -77,7 +80,7 @@ namespace Employment.Controllers
 
 
 
-
+        [PermissionChecker(2)]
         public IActionResult DeleteForm(int formId)
         {
             var user = _user.GetUserByUserName(User.Identity.Name);
@@ -87,6 +90,9 @@ namespace Employment.Controllers
             return RedirectToAction("GetAllForms");
         }
 
+
+
+
         public IActionResult FinalConfirmation(int formId, int userId)
         {
 
@@ -95,12 +101,16 @@ namespace Employment.Controllers
             return RedirectToAction("GetAllForms");
         }
 
+
+        [PermissionChecker(3)]
+
         public IActionResult AcceptedPersons()
         {
             var employees = _form.GetAcceptedEmployees();
             return View(employees);
         }
 
+        [PermissionChecker(3)]
         public IActionResult AcceptedPerson(int id)
         {
             var person = _form.GetAcceptedEmployeeById(id);

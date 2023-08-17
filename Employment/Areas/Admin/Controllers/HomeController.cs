@@ -10,11 +10,12 @@ namespace Employment.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         IUser _user;
+        IAdmin _admin;
 
-
-        public HomeController(IUser user)
+        public HomeController(IUser user, IAdmin admin)
         {
             _user = user;
+            _admin = admin;
         }
 
 
@@ -30,7 +31,7 @@ namespace Employment.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(EditUserPanel user, List<int> SelectedPermissions)
+        public IActionResult Create(EditUserPanel user, List<int> SelectedPermissions, int? selectedDepartment)
         {
             if (!ModelState.IsValid)
             {
@@ -50,10 +51,11 @@ namespace Employment.Areas.Admin.Controllers
                 return View();
             }
 
+
             var admin = _user.GetUserByUserName(User.Identity.Name);
 
 
-            _user.AddUserByAdmin(user, SelectedPermissions, admin.Id);
+            _admin.AddUserByAdmin(user, SelectedPermissions, admin.Id, selectedDepartment);
 
 
 
@@ -72,7 +74,7 @@ namespace Employment.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult Edit(User user, List<int> SelectedPermissions)
+        public IActionResult Edit(User user, List<int> SelectedPermissions, int? selectedDepartment)
         {
             if (!ModelState.IsValid)
             {
@@ -90,7 +92,7 @@ namespace Employment.Areas.Admin.Controllers
             var admin = _user.GetUserByUserName(User.Identity.Name);
 
 
-            _user.EditUserByAdmin(user, SelectedPermissions,admin.Id);
+            _admin.EditUserByAdmin(user, SelectedPermissions, admin.Id, selectedDepartment);
 
             return RedirectToAction("Index");
         }
@@ -106,14 +108,17 @@ namespace Employment.Areas.Admin.Controllers
         public IActionResult Delete(User user)
         {
             var admin = _user.GetUserByUserName(User.Identity.Name);
-            _user.RemoveUserByAdmin(user,admin.Id);
+            _admin.RemoveUserByAdmin(user, admin.Id);
             return RedirectToAction("Index");
         }
 
         public IActionResult ShowActivities(int userId)
         {
-            var logs=_user.GetAllUserLog(userId);
+            var logs = _user.GetAllUserLog(userId);
             return View(logs);
         }
+
+
+       
     }
 }

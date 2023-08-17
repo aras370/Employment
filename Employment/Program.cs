@@ -16,6 +16,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyContext>(options =>
 {
     options.UseSqlServer("Data Source=.; Initial Catalog=Employmentt; Integrated Security=true");
+    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 
 
@@ -23,6 +24,8 @@ builder.Services.AddDbContext<MyContext>(options =>
 builder.Services.AddScoped<IForm, FormService>();
 
 builder.Services.AddScoped<IUser, UserService>();
+
+builder.Services.AddScoped<IAdmin, Admin>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
     options =>

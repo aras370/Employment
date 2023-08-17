@@ -1,0 +1,49 @@
+﻿@model List<Rate>
+
+<div>
+
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">بخش</th>
+                <th scope="col">مسئول</th>
+                <th scope="col">پرسنل</th>
+                <th scope="col">نوع</th>
+                <th scope="col">توضیحات</th>
+                <th scope="col">امتیاز</th>
+                <th scope="col">مبلغ</th>
+                <th scope="col">تاریخ</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.HotelDepartment.Name</td>
+                    <td>@item.User.Name</td>
+                    <td>@item.EmployeeUser.Name</td>
+                    <td>@item.FieldOfRating.Name</td>
+                    <td>@item.Description</td>
+                    @if (item.Score < 0)
+                    {
+                        <td class="text-danger">@item.Score</td>
+                        <td class="text-danger">@item.Amount-</td>
+                    }
+                    else
+                    {
+                        <td >@item.Score</td>
+                        <td>@item.Amount</td>
+
+                    }
+                    <td>@item.Date</td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+
+</div>

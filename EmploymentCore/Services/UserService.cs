@@ -24,73 +24,6 @@ namespace EmploymentCore
 
 
         }
-
-        public void AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId)
-        {
-            User newuser = new User()
-            {
-                Name = user.UserName.Trim(),
-                Password = user.Password.Trim(),
-            };
-
-            _context.Users.Add(newuser);
-            _context.SaveChanges();
-            foreach (var permission in permissions)
-            {
-                UsersPermission usersPermission = new UsersPermission()
-                {
-                    UserId = newuser.Id,
-                    PermissionId = permission
-                };
-                _context.Add(usersPermission);
-                _context.SaveChanges();
-            };
-
-
-            UserLog log = new UserLog()
-            {
-                CreationDate = DateTime.Now.toshamsi(),
-                UserId = adminId,
-                Description = $"افزودن کاربر {newuser.Name}"
-            };
-            _context.Add(log);
-            _context.SaveChanges();
-        }
-
-
-
-        public void EditUserByAdmin(User user, List<int> permissions, int adminId)
-        {
-            _context.Users.Update(user);
-            _context.SaveChanges();
-            _context.UsersPermissions.Where(up => up.UserId == user.Id).ToList().ForEach(p => _context.UsersPermissions.Remove(p));
-            foreach (var permission in permissions)
-            {
-                UsersPermission usersPermission = new UsersPermission()
-                {
-                    UserId = user.Id,
-                    PermissionId = permission
-                };
-                _context.Add(usersPermission);
-                _context.SaveChanges();
-            };
-
-
-            UserLog log = new UserLog()
-            {
-                CreationDate = DateTime.Now.toshamsi(),
-                UserId = adminId,
-                Description = $"تغییر اطلاعات کاربری یا دسترسی های {user.Name}"
-            };
-            _context.Add(log);
-            _context.SaveChanges();
-
-        }
-
-
-
-
-
         public bool CheckUserPermission(int permissionId, string userName)
         {
 
@@ -106,10 +39,7 @@ namespace EmploymentCore
 
         }
 
-
-
-        public void EditUser(EditUserPanel user
-            )
+        public void EditUser(EditUserPanel user)
         {
             var newuser = GetUserByUserId(user.Id);
             newuser.Name = user.UserName.Trim();
@@ -167,26 +97,18 @@ namespace EmploymentCore
         }
 
 
-        public void RemoveUserByAdmin(User user,int adminId)
-        {
-
-            _context.Users.Remove(user);
-            _context.SaveChanges();
-
-            UserLog log = new UserLog()
-            {
-                UserId=adminId,
-                CreationDate=DateTime.Now.toshamsi(),
-                Description=$"حذف کاربر {user.Name}"
-            };
-
-            _context.Add(log);
-            _context.SaveChanges();
-        }
+      
 
         public bool IsExistUser(string username)
         {
             return _context.Users.Any(u => u.Name == username.Trim());
+        }
+
+        public List<User> GetUserForDepartment(string name)
+        {
+           var user=GetUserByUserName(name);
+
+            return _context.Users.Where(u=>u.Id==user.Id).ToList();
         }
     }
 }

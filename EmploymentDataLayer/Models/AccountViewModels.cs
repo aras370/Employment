@@ -20,6 +20,10 @@ namespace EmploymentDataLayer
         public string Password { get; set; }
 
 
+        [Display(Name ="بخش")]
+        public int? DepartmentId { get; set; }
+
+
         [Compare ("Password", ErrorMessage ="کلمه های عبور وارد شده با هم مطابقت ندارند")]
         [Required(ErrorMessage = "لطفا تکرار کلمه عبور را وارد کنید")]
 

@@ -1,0 +1,96 @@
+﻿@model Rate
+@inject IAdmin _admin;
+@inject IUser _user;
+@{
+    var employee = _admin.GetEmployeeUserForAdminById(ViewBag.EmployeeId);
+}
+<div class="row container mt-2">
+
+    <div class="col-md-4">
+
+
+
+        <form method="post">
+
+            <div class="form-group mb-1">
+                <label asp-for=DepartmentID class="control-label"> </label>             
+                <select class="form-control mt-2" asp-for=DepartmentID asp-items="ViewBag.Department"></select>
+              
+            </div>
+
+            <div class="form-group mb-1">
+                <label asp-for=ManagerId class="control-label"></label>
+                <select class="form-control mt-2" asp-for=ManagerId asp-items="ViewBag.Manager"></select>
+            </div>
+
+
+            <div class="form-group mb-1">
+                <label asp-for=EmployeeUserId class="control-label"></label>             
+                <select asp-for="EmployeeUserId" class="form-control mt-2"  asp-items="ViewBag.Employee">
+                </select>
+
+            </div>
+
+            <div class="form-group mb-1">
+                <label class="control-label"> نوع</label>
+                <select class="form-control mt-2" asp-for=FieldOfRatingId asp-items="ViewBag.FieldOfRating"></select>
+             
+            </div>
+
+
+            <div class="form-group mt-3 mb-1">
+                <label asp-for=Description class="control-label"></label>
+                <textarea asp-for=Description class="form-control"></textarea>
+
+            </div>
+
+
+            <div class="form-group mt-3 mb-1">
+                <label asp-for=Score class="control-label"></label>
+                <input asp-for=Score class="form-control" type="range" min="-5" max="5" onchange="updateTextInput(this.value);" />
+                <input class="form-control mt-1  " readonly type="text" id="textInput" value="">
+            </div>
+
+
+
+            <div class="form-group mt-3 mb-1">
+                <label asp-for=Amount class="control-label"></label>
+                <input type="number" asp-for=Amount class="form-control" />
+
+            </div>
+
+            <div class="form-group mt-3 mb-1">
+                <label asp-for=Date class="control-label"></label>
+                <input asp-for=Date class="form-control" />
+
+            </div>
+
+
+            <pre></pre>
+
+
+
+
+            <div asp-validation-summary="All" class="text-danger">
+            </div>
+
+            <div class="form-group" style="margin-top:20px;">
+                <input type="submit" value="ثبت" class="btn btn-success" />
+                <a class="btn btn-primary" href="/Admin/Rate/Index">بازگشت</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script>
+
+        function updateTextInput(val) {
+            document.getElementById('textInput').value = val;
+        }
+
+    </script>
+
+}

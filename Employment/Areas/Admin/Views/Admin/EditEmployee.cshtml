@@ -1,0 +1,74 @@
+﻿@model EmployeeUser
+@{
+    List<HotelDepartment> departments = ViewBag.Department as List<HotelDepartment>;
+}
+<div class="container">
+
+    <form method="post">
+        <input type="hidden" asp-for="EmployeeUserId" />
+        <input type="hidden" asp-for="DepartmentId" />
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">نام و نام خانوادگی:</label>
+            <div class="col-sm-3">
+                <input type="text" asp-for="Name" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+
+
+
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <pre>
+        </pre>
+
+        <div class="form-group ">
+            <div class="row">
+                بخش کاری
+            </div>
+            <hr />
+
+
+            <ul>
+
+                @foreach (var item in departments)
+                {
+
+                    <li>
+                        <input class="radio" type="checkbox" name="selectedDepartment" value="@item.DepartmentId"> @item.Name
+
+                    </li>
+
+
+                }
+
+
+
+            </ul>
+        </div>
+
+        <pre></pre>
+
+        <button type="submit" class="btn btn-success">افزودن</button>
+        <a asp-action="Index" class="btn btn-primary">بازگشت</a>
+    </form>
+
+
+</div>
+
+
+
+@section Scripts {
+    <script>
+        $("input:checkbox").on('click', function () {
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                $(group).prop("checked", false);
+                $box.prop("checked", true);
+            } else {
+                $box.prop("checked", false);
+            }
+        });
+    </script>
+};
