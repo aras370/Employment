@@ -190,6 +190,7 @@ namespace EmploymentCore
             var departmentId = _context.Users.Where(u => u.Id == userId).Select(u => u.DepartmentId).SingleOrDefault();
 
             var department = _context.HotelDepartments.Where(h => h.DepartmentId == departmentId).ToList();
+
             return department;
         }
 
@@ -201,8 +202,11 @@ namespace EmploymentCore
         public void AddRate(Rate rate, int managerId, int employeeId)
         {
             _context.Add(rate); 
+
             _context.SaveChanges();
+
             var employee = _context.EmployeeUsers.Find(employeeId);
+
             UserLog log = new UserLog()
             {
                 UserId = managerId,
@@ -218,7 +222,17 @@ namespace EmploymentCore
 
         public List<Rate> GetAllRate()
         {
-            return _context.Rates.Include(r=>r.User).Include(r=>r.EmployeeUser).Include(r=>r.HotelDepartment).Include(r=>r.FieldOfRating).ToList();
+            return _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).OrderByDescending(r=>r.RateId).ToList();
+        }
+
+        public List<Rate> GetRateBySearch(string parametr)
+        {
+            return _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).Where(r=>r.User.Name.Contains(parametr) || r.EmployeeUser.Name.Contains(parametr)).ToList();
+        }
+
+        public List<Rate> SortRatesByAmount()
+        {
+           return _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).OrderByDescending(r=>r.Amount).ToList();
         }
     }
 }

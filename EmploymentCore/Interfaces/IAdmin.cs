@@ -48,5 +48,9 @@ namespace EmploymentCore
 
 
         List<Rate> GetAllRate();
+
+        List<Rate> GetRateBySearch(string parametr);
+
+        List<Rate> SortRatesByAmount();
     }
 }

@@ -1,6 +1,18 @@
 ﻿@model List<Rate>
+@using EmploymentCore
+<div class="mt-5">
 
-<div>
+
+    <div class="row mb-3">
+
+        <div class="col-4">
+            <form method="post" action="SearchScores" class="d-flex" role="search">
+                <input name="parametr" class="form-control me-2" type="search" placeholder="نام مسئول یا پرسنل را وارد کنید" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">جستجو</button>
+            </form>
+
+        </div>
+    </div>
 
 
     <table class="table table-bordered table-striped table-hover">
@@ -12,7 +24,10 @@
                 <th scope="col">نوع</th>
                 <th scope="col">توضیحات</th>
                 <th scope="col">امتیاز</th>
-                <th scope="col">مبلغ</th>
+               
+                <th scope="col">
+                    <a class="text-black text-decoration-none" href="/Admin/Rate/SortByAmount">مبلغ</a>
+                </th>
                 <th scope="col">تاریخ</th>
             </tr>
         </thead>
@@ -28,13 +43,13 @@
                     <td>@item.Description</td>
                     @if (item.Score < 0)
                     {
-                        <td class="text-danger">@item.Score</td>
-                        <td class="text-danger">@item.Amount-</td>
+                        <td class="text-danger">@Dateconvertor.ConvertToEasternArabicNumerals(item.Score.ToString())</td>
+                        <td class="text-danger"> @Dateconvertor.ConvertToEasternArabicNumerals(String.Format("{0:n0}", item.Amount).ToString())</td>
                     }
                     else
                     {
-                        <td >@item.Score</td>
-                        <td>@item.Amount</td>
+                        <td> @Dateconvertor.ConvertToEasternArabicNumerals(item.Score.ToString())</td>
+                        <td>@Dateconvertor.ConvertToEasternArabicNumerals(String.Format("{0:n0}", item.Amount).ToString())</td>
 
                     }
                     <td>@item.Date</td>

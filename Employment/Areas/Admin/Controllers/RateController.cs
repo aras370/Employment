@@ -63,9 +63,23 @@ namespace Employment.Areas.Admin.Controllers
         public IActionResult GetEmployeesScores()
         {
             var rates = _admin.GetAllRate();
+            
             return View(rates);
         }
 
+        [HttpPost]
+        public IActionResult SearchScores(string parametr)
+        {
 
+           var scores= _admin.GetRateBySearch(parametr);
+
+            return View("GetEmployeesScores",scores);
+        }
+
+        public IActionResult SortByAmount()
+        {
+            var rates=_admin.SortRatesByAmount();
+            return View("GetEmployeesScores",rates);
+        }
     }
 }
