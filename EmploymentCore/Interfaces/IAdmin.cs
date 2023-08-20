@@ -49,8 +49,11 @@ namespace EmploymentCore
 
         List<Rate> GetAllRate();
 
-        List<Rate> GetRateBySearch(string parametr);
+        Rate GetRateBySearch(string parametr);
 
         List<Rate> SortRatesByAmount();
+
+        EmployeeUser GetEmployeeUser(string userName);
+
     }
 }

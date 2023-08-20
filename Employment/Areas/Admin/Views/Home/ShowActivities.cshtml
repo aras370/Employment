@@ -1,5 +1,5 @@
-﻿@model List<UserLog>
-
+﻿
+@model List<UserLog>
 
 
 
@@ -21,13 +21,13 @@
 
                 <td>@item.User.Name</td>
                 <td>@item.Description</td>
-                <td>@item.CreationDate</td>
+                <td>@(Dateconvertor.ConvertToEasternArabicNumerals(item.CreationDate))</td>
 
             </tr>
         }
       
        
-    </tbody>
+    </tbody>        
 </table>
 
 

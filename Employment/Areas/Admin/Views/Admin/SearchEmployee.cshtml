@@ -1,0 +1,37 @@
+﻿@model EmployeeUser
+@{
+    ViewData["Title"] = "کاربران";
+
+}
+
+<div class="container mt-4">
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col"> نام پرسنل </th>
+                <th scope="col">عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr>
+
+                    <td>@Model.Name</td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="EditEmployee" asp-route-employeeId="@Model.EmployeeUserId">ویرایش</a> | <a class="btn btn-danger" asp-action="DeleteEmployee" asp-area="Admin" asp-controller="Admin" asp-route-employeeId="@Model.EmployeeUserId">حذف</a>
+
+                    </td>
+
+                </tr>
+            
+        </tbody>
+    </table>
+    <pre></pre>
+
+    <a class="btn btn-success" href="/Admin/Admin/AddEmployee">افزودن</a>
+    <a href="/" class="btn btn-primary">بازگشت</a>
+
+
+</div>

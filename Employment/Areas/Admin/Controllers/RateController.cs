@@ -63,7 +63,7 @@ namespace Employment.Areas.Admin.Controllers
         public IActionResult GetEmployeesScores()
         {
             var rates = _admin.GetAllRate();
-            
+            ViewBag.issort = false;
             return View(rates);
         }
 
@@ -71,7 +71,18 @@ namespace Employment.Areas.Admin.Controllers
         public IActionResult SearchScores(string parametr)
         {
 
+
+
            var scores= _admin.GetRateBySearch(parametr);
+
+
+            if (scores==null)
+            {
+                return View("notfound");
+            }
+
+
+            ViewBag.issort = false;
 
             return View("GetEmployeesScores",scores);
         }
@@ -79,6 +90,7 @@ namespace Employment.Areas.Admin.Controllers
         public IActionResult SortByAmount()
         {
             var rates=_admin.SortRatesByAmount();
+            ViewBag.issort = true;
             return View("GetEmployeesScores",rates);
         }
     }

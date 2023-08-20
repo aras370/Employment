@@ -22,8 +22,22 @@ namespace Employment.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+
             var employees = _admin.GetALLEmployeeByAdmin();
             return View(employees);
+        }
+
+
+        public IActionResult SearchEmployee(string userName)
+        {
+            var employee=_admin.GetEmployeeUser(userName);
+
+            if (employee==null)
+            {
+                return View("notfound");
+            }
+
+            return View(employee);
         }
 
 

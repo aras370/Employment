@@ -35,7 +35,7 @@
                 {
 
                     <li>
-                        <input class="radio" type="checkbox" name="selectedDepartment" value="@item.DepartmentId"> @item.Name
+                        <input class="radio" type="checkbox" name="selectedDepartment" value="@item.DepartmentId" @((Model.DepartmentId==item.DepartmentId)?"checked" : ""))> @item.Name
 
                     </li>
 
