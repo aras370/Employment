@@ -23,14 +23,14 @@ namespace Employment.Controllers
         }
 
 
-        [AllowAnonymous]
+       
         public IActionResult Employment()
         {
             return View();
         }
 
 
-        [AllowAnonymous]
+     
         [HttpPost]
         public IActionResult Employment(Employee employee)
         {

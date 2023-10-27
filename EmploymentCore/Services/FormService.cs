@@ -133,7 +133,7 @@ namespace EmploymentCore
             switch (userId)
 
             {
-                case 3:
+                case 1:
                     employees = _context.Employees.Where(e => e.Confirmation == 0).ToList();
                     break;
 
@@ -141,7 +141,7 @@ namespace EmploymentCore
                     employees = _context.Employees.Where(e => e.Confirmation == 1).ToList();
                     break;
 
-                case 1:
+                case 5:
                     employees = _context.Employees.Where(e => e.Confirmation == 2).ToList();
                     break;
 

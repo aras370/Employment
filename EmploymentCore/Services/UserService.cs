@@ -28,7 +28,7 @@ namespace EmploymentCore
         {
 
 
-            var userId = _context.Users.Single(u => u.Name == userName).Id;
+            var userId = _context.Users.First(u => u.Name == userName).Id;
 
             List<int> userpermissions = _context.UsersPermissions.Where(up => up.UserId == userId).Select
                 (up => up.PermissionId).ToList();

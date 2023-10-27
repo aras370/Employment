@@ -2,9 +2,10 @@
 using EmploymentCore;
 using EmploymentDataLayer;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-
-
+using System.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,17 +16,21 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<MyContext>(options =>
 {
-    options.UseSqlServer("Data Source=.; Initial Catalog=Employmentt; Integrated Security=true");
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:connection"]);
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 
 
 
-builder.Services.AddScoped<IForm, FormService>();
+builder.Services.AddScoped(typeof(IForm), typeof(FormService));
 
 builder.Services.AddScoped<IUser, UserService>();
 
 builder.Services.AddScoped<IAdmin, Admin>();
+
+builder.Services.AddTransient<IDbConnection>(options =>
+new SqlConnection(builder.Configuration.GetConnectionString("connection"))
+);
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
     options =>

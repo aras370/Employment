@@ -3,7 +3,7 @@
 @inject IAdmin _admin
 @{
     var permissions = _user.GetPermissions();
-    var departments = _admin.GetDepartmentForAdmin();
+    var departments =await _admin.GetDepartmentForAdmin();
 }
 
 <form method="post">

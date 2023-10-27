@@ -20,19 +20,19 @@ namespace Employment.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
-            var employees = _admin.GetALLEmployeeByAdmin();
+            var employees = await _admin.GetALLEmployeeByAdmin();
             return View(employees);
         }
 
 
-        public IActionResult SearchEmployee(string userName)
+        public async Task<IActionResult> SearchEmployee(string userName)
         {
-            var employee=_admin.GetEmployeeUser(userName);
+            var employee =await _admin.GetEmployeeUser(userName);
 
-            if (employee==null)
+            if (employee == null)
             {
                 return View("notfound");
             }
@@ -43,13 +43,13 @@ namespace Employment.Areas.Admin.Controllers
 
         public IActionResult AddEmployee()
         {
-            
+
             return View();
         }
 
 
         [HttpPost]
-        public IActionResult AddEmployee(EmployeeUser employee, int selectedDepartment)
+        public async Task<IActionResult> AddEmployee(EmployeeUser employee, int selectedDepartment)
         {
             if (!ModelState.IsValid)
             {
@@ -64,41 +64,41 @@ namespace Employment.Areas.Admin.Controllers
 
             var admin = _user.GetUserByUserName(User.Identity.Name);
 
-           
 
-            _admin.AddEmployeeByAdmin(employee, admin.Id,selectedDepartment);
+
+          await  _admin.AddEmployeeByAdmin(employee, admin.Id, selectedDepartment);
             return RedirectToAction("Index");
         }
 
 
-        public IActionResult DeleteEmployee(int employeeId)
+        public async Task<IActionResult> DeleteEmployee(int employeeId)
         {
-            var employee = _admin.GetEmployeeUserForAdminById(employeeId);
+            var employee =await _admin.GetEmployeeUserForAdminById(employeeId);
             return View(employee);
         }
 
 
         [HttpPost]
-        public IActionResult DeleteEmployee(EmployeeUser employee)
+        public async Task<IActionResult> DeleteEmployee(EmployeeUser employee)
         {
-            _admin.DeleteEmployee(employee);
+           await _admin.DeleteEmployee(employee);
 
 
             return RedirectToAction("Index");
         }
 
 
-        public IActionResult EditEmployee(int employeeId)
+        public async Task<IActionResult> EditEmployee(int employeeId)
         {
-            ViewBag.Department = _admin.GetDepartmentForAdmin();
-            var emplolee = _admin.GetEmployeeUserForAdminById(employeeId);
+            ViewBag.Department =await _admin.GetDepartmentForAdmin();
+            var emplolee =await _admin.GetEmployeeUserForAdminById(employeeId);
             return View(emplolee);
         }
 
         [HttpPost]
-        public IActionResult EditEmployee(EmployeeUser employee, int? selectedDepartment)
+        public async Task<IActionResult> EditEmployee(EmployeeUser employee, int? selectedDepartment)
         {
-            _admin.EditEmployee(employee, selectedDepartment);
+           await _admin.EditEmployee(employee, selectedDepartment);
 
 
             return RedirectToAction("Index");

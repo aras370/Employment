@@ -1,7 +1,7 @@
 ﻿@model EmployeeUser
 @inject IAdmin _admin;
 @{
-    var departments = _admin.GetDepartmentForAdmin();
+    var departments =await _admin.GetDepartmentForAdmin();
 
 }
 <div class="container">

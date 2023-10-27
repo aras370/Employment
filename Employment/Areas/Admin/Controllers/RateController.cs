@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Employment.Areas.Admin.Controllers
 {
     [Area("Admin")]
+
     public class RateController : Controller
     {
         IAdmin _admin;
@@ -18,9 +19,8 @@ namespace Employment.Areas.Admin.Controllers
             _user = user;
 
         }
-
-        [PermissionChecker(1009)]
-        public IActionResult Index()
+        [PermissionChecker(4)]
+        public  IActionResult Index()
         {
             var user = _user.GetUserByUserName(User.Identity.Name);
             var employeeuser = _admin.GetEmployeeForManager(user.Id);
@@ -28,25 +28,25 @@ namespace Employment.Areas.Admin.Controllers
         }
 
 
-        [PermissionChecker(1009)]
-        public IActionResult Rate(int employeeId)
+        [PermissionChecker(4)]
+        public async Task<IActionResult>  Rate(int employeeId)
         {
             ViewBag.EmployeeId = employeeId;
 
-            var manager=_user.GetUserByUserName(User.Identity.Name);
+            var manager = _user.GetUserByUserName(User.Identity.Name);
 
-            ViewBag.Department = new SelectList(_admin.GetUserDepartment(manager.Id), "DepartmentId", "Name");
+            ViewBag.Department = new SelectList(await _admin.GetUserDepartment(manager.Id), "DepartmentId", "Name");
 
-            ViewBag.Manager = new SelectList(_user.GetUserForDepartment(User.Identity.Name),"Id","Name");
+            ViewBag.Manager = new SelectList(_user.GetUserForDepartment(User.Identity.Name), "Id", "Name");
 
-            ViewBag.Employee =new SelectList( _admin.GetEmployeeForManager(manager.Id), "EmployeeUserId","Name");
+            ViewBag.Employee = new SelectList( await _admin.GetEmployeeForManager(manager.Id), "EmployeeUserId", "Name");
 
-            ViewBag.FieldOfRating = new SelectList(_admin.GetAllFieldeOfRating(), "FieldOfRatingId","Name");
+            ViewBag.FieldOfRating = new SelectList(await _admin.GetAllFieldeOfRating(), "FieldOfRatingId", "Name");
 
             return View();
         }
 
-        [PermissionChecker(1009)]
+
         [HttpPost]
         public IActionResult Rate(Rate rate)
         {
@@ -60,23 +60,21 @@ namespace Employment.Areas.Admin.Controllers
 
 
         [PermissionChecker(1)]
-        public IActionResult GetEmployeesScores()
+        public async Task<IActionResult>  GetEmployeesScores()
         {
-            var rates = _admin.GetAllRate();
+            var rates =await _admin.GetAllRate();
             ViewBag.issort = false;
             return View(rates);
         }
 
         [HttpPost]
-        public IActionResult SearchScores(string parametr)
+        [PermissionChecker(1)]
+        public async Task<IActionResult>  SearchScores(string parametr)
         {
+            var scores =await _admin.GetRateBySearch(parametr);
 
 
-
-           var scores= _admin.GetRateBySearch(parametr);
-
-
-            if (scores==null)
+            if (scores == null)
             {
                 return View("notfound");
             }
@@ -84,14 +82,15 @@ namespace Employment.Areas.Admin.Controllers
 
             ViewBag.issort = false;
 
-            return View("GetEmployeesScores",scores);
+            return View("GetEmployeesScores", scores);
         }
 
-        public IActionResult SortByAmount()
+        [PermissionChecker(1)]
+        public async Task<IActionResult> SortByAmount()
         {
-            var rates=_admin.SortRatesByAmount();
+            var rates =await _admin.SortRatesByAmount();
             ViewBag.issort = true;
-            return View("GetEmployeesScores",rates);
+            return View("GetEmployeesScores", rates);
         }
     }
 }

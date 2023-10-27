@@ -10,50 +10,50 @@ namespace EmploymentCore
     public interface IAdmin
     {
 
-        void AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId,int? departmentId);
+        Task AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId, int? departmentId);
 
 
-        void EditUserByAdmin(User user, List<int> permissions, int admiId, int? departmentId);
+        Task EditUserByAdmin(User user, List<int> permissions, int admiId, int? departmentId);
 
 
-        void RemoveUserByAdmin(User user, int adminId);
+        Task RemoveUserByAdmin(User user, int adminId);
 
 
-        List<HotelDepartment> GetDepartmentForAdmin();
+        Task<List<HotelDepartment>> GetDepartmentForAdmin();
 
 
-       void AddEmployeeByAdmin(EmployeeUser employeeUser, int adminId, int selectedDepartment);
+        Task AddEmployeeByAdmin(EmployeeUser employeeUser, int adminId, int selectedDepartment);
 
-        List<EmployeeUser> GetALLEmployeeByAdmin();
-
-
-        List<EmployeeUser> GetEmployeeForManager(int managerId);
+        Task<List<EmployeeUser>> GetALLEmployeeByAdmin();
 
 
-        EmployeeUser GetEmployeeUserForAdminById(int employeeId);
+        Task<List<EmployeeUser>> GetEmployeeForManager(int managerId);
 
 
-        void EditEmployee(EmployeeUser employeeUser, int? selectedDepartment);
-
-        void DeleteEmployee(EmployeeUser employeeUser);
-
-        List<FieldOfRating> GetAllFieldeOfRating();
-
-        List<HotelDepartment> GetUserDepartment(int userId);
-
-        List<User> GetManagerOfDepartment(int departmentId);
+        Task<EmployeeUser> GetEmployeeUserForAdminById(int employeeId);
 
 
-        void AddRate(Rate rate,int  managerId, int employeeId);
+        Task EditEmployee(EmployeeUser employeeUser, int? selectedDepartment);
+
+        Task DeleteEmployee(EmployeeUser employeeUser);
+
+        Task<List<FieldOfRating>> GetAllFieldeOfRating();
+
+        Task<List<HotelDepartment>> GetUserDepartment(int userId);
+
+        Task<List<User>> GetManagerOfDepartment(int departmentId);
 
 
-        List<Rate> GetAllRate();
+        Task AddRate(Rate rate, int managerId, int employeeId);
 
-        Rate GetRateBySearch(string parametr);
 
-        List<Rate> SortRatesByAmount();
+        Task<List<Rate>> GetAllRate();
 
-        EmployeeUser GetEmployeeUser(string userName);
+        Task<Rate> GetRateBySearch(string parametr);
+
+        Task<List<Rate>> SortRatesByAmount();
+
+        Task<EmployeeUser> GetEmployeeUser(string userName);
 
     }
 }

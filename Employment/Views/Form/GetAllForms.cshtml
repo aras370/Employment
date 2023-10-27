@@ -21,7 +21,8 @@
 
                         <td>@item.Name @item.LastName</td>
                         <td>
-                            <a class="btn btn-success" asp-action="GetFormById" asp-route-id="@item.Id">مشاهده</a> | <a id="btndelete" class="btn btn-danger"  asp-action="DeleteForm" asp-route-formId="@item.Id">حذف</a>
+                            <a class="btn btn-success" asp-action="GetFormById" asp-route-id="@item.Id">مشاهده</a> |
+                            <a onclick="return confirm('Are You Sure For Delete?')" id="btndelete" class="btn btn-danger" asp-action="DeleteForm" asp-route-formId="@item.Id">حذف</a>
                         </td>
 
                     </tr>

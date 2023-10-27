@@ -9,145 +9,145 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Employment
 build_property.RootNamespace = Employment
-build_property.ProjectDir = C:\Users\AmirHesam\Desktop\Employment\Employment\
+build_property.ProjectDir = C:\Users\Amazondigi.com\Desktop\Employment\Employment\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\AmirHesam\Desktop\Employment\Employment
+build_property.MSBuildProjectDirectory = C:\Users\Amazondigi.com\Desktop\Employment\Employment
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Admin/AddEmployee.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Admin/AddEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQWRkRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Admin/DeleteEmployee.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Admin/DeleteEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRGVsZXRlRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Admin/EditEmployee.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Admin/EditEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRWRpdEVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Admin/Index.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Admin/SearchEmployee.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Admin/SearchEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cU2VhcmNoRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Home/Create.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Home/Delete.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Home/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Home/Edit.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Home/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Home/ShowActivities.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Home/ShowActivities.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxTaG93QWN0aXZpdGllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Rate/GetEmployeesScores.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Rate/GetEmployeesScores.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmF0ZVxHZXRFbXBsb3llZXNTY29yZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Rate/Index.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Rate/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmF0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Rate/Rate.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Rate/Rate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmF0ZVxSYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Shared/Error.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Shared/notfound.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Shared/notfound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXG5vdGZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Account/Login.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Form/AcceptedPerson.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Form/AcceptedPerson.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxBY2NlcHRlZFBlcnNvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Form/AcceptedPersons.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Form/AcceptedPersons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxBY2NlcHRlZFBlcnNvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Form/Employment.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Form/Employment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxFbXBsb3ltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Form/GetAllForms.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Form/GetAllForms.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxHZXRBbGxGb3Jtcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Form/GetFormById.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Form/GetFormById.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybVxHZXRGb3JtQnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Home/Index.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Shared/AccessDenied.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Shared/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFjY2Vzc0RlbmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Shared/Error.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/UserPanel/EditUserInformation.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/UserPanel/EditUserInformation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBhbmVsXEVkaXRVc2VySW5mb3JtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/UserPanel/Panel.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/UserPanel/Panel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclBhbmVsXFBhbmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/_ViewImports.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/_ViewStart.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Areas/Admin/Views/Shared/_Layout.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bc2qjh7u5g
 
-[C:/Users/AmirHesam/Desktop/Employment/Employment/Views/Shared/_Layout.cshtml]
+[C:/Users/Amazondigi.com/Desktop/Employment/Employment/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i42my5ej5g

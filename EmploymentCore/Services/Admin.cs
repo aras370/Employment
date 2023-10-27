@@ -1,7 +1,9 @@
-﻿using EmploymentDataLayer;
+﻿using Dapper;
+using EmploymentDataLayer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +14,21 @@ namespace EmploymentCore
     {
 
         MyContext _context;
-
-        public Admin(MyContext context)
+        IDbConnection _connection;
+        public Admin(MyContext context, IDbConnection db)
         {
             _context = context;
+            _connection = db;
         }
 
 
-        public void RemoveUserByAdmin(User user, int adminId)
+        #region LInq Methodes
+
+        public async Task RemoveUserByAdmin(User user, int adminId)
         {
 
             _context.Users.Remove(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             UserLog log = new UserLog()
             {
@@ -32,13 +37,13 @@ namespace EmploymentCore
                 Description = $"حذف کاربر {user.Name}"
             };
 
-            _context.Add(log);
-            _context.SaveChanges();
+            await _context.AddAsync(log);
+            await _context.SaveChangesAsync();
         }
 
 
 
-        public void EditUserByAdmin(User user, List<int> permissions, int adminId, int? departmentId)
+        public async Task EditUserByAdmin(User user, List<int> permissions, int adminId, int? departmentId)
         {
             if (departmentId != null)
             {
@@ -81,7 +86,7 @@ namespace EmploymentCore
 
 
 
-        public void AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId, int? departmentId)
+        public async Task AddUserByAdmin(EditUserPanel user, List<int> permissions, int adminId, int? departmentId)
         {
             User newuser = new User()
             {
@@ -121,20 +126,29 @@ namespace EmploymentCore
 
         }
 
-        public List<HotelDepartment> GetDepartmentForAdmin()
+        public async Task<List<HotelDepartment>> GetDepartmentForAdmin()
         {
             return _context.HotelDepartments.ToList();
         }
 
-        public void AddEmployeeByAdmin(EmployeeUser employeeUser, int adminId, int selectedDepartment)
+        //create
+        public async Task AddEmployeeByAdmin(EmployeeUser employeeUser, int adminId, int selectedDepartment)
         {
-            EmployeeUser employee = new EmployeeUser()
-            {
-                DepartmentId = selectedDepartment,
-                Name = employeeUser.Name,
-            };
-            _context.EmployeeUsers.Add(employee);
-            _context.SaveChanges();
+
+            var query = $@"INSERT EmployeeUsers([Name],DepartmentId)
+
+                        VALUES (@Name,{selectedDepartment}) ";
+
+            await _connection.ExecuteAsync(query,employeeUser);
+
+
+            //EmployeeUser employee = new EmployeeUser()
+            //{
+            //    DepartmentId = selectedDepartment,
+            //    Name = employeeUser.Name,
+            //};
+            //await _context.EmployeeUsers.AddAsync(employee);
+            //await _context.SaveChangesAsync();
 
             UserLog log = new UserLog()
             {
@@ -142,34 +156,49 @@ namespace EmploymentCore
                 UserId = adminId,
                 Description = $"افزودن کارمند{employeeUser.Name}"
             };
-            _context.Add(log);
-            _context.SaveChanges();
+
+            var query2 = $@"INSERT UserLogs (CreationDate,UserId,Description)
+                         VALUES (@CreationDate,@UserId,@Description)";
+
+           await _connection.ExecuteAsync(query2,log);
+
+            //await _context.AddAsync(log);
+            //await _context.SaveChangesAsync();
         }
 
-        public List<EmployeeUser> GetALLEmployeeByAdmin()
+        public async Task<List<EmployeeUser>> GetALLEmployeeByAdmin()
         {
-            return _context.EmployeeUsers.ToList();
+            var query = @"SELECT * FROM EmployeeUsers";
+            var users = await _connection.QueryAsync<EmployeeUser>(query);
+            return users.ToList();
         }
 
-        public List<EmployeeUser> GetEmployeeForManager(int managerId)
+        public async Task<List<EmployeeUser>> GetEmployeeForManager(int managerId)
         {
-            var manager = _context.Users.Include(u => u.UsersPermissions).Where(u => u.Id == managerId).SingleOrDefault();
+            var manager = await _context.Users.Include(u => u.UsersPermissions).Where(u => u.Id == managerId).FirstOrDefaultAsync();
 
-            return _context.EmployeeUsers.Where(e => e.DepartmentId == manager.DepartmentId).ToList();
+
+
+            return await _context.EmployeeUsers.Where(e => e.DepartmentId == manager.DepartmentId).ToListAsync();
         }
 
-        public EmployeeUser GetEmployeeUserForAdminById(int employeeId)
+        public async Task<EmployeeUser> GetEmployeeUserForAdminById(int employeeId)
         {
-            return _context.EmployeeUsers.Include(e=>e.HotelDepartment).Where(e=>e.EmployeeUserId == employeeId).SingleOrDefault();
+            return await _context.EmployeeUsers.Include(e => e.HotelDepartment).Where(e => e.EmployeeUserId == employeeId).FirstOrDefaultAsync();
         }
 
-        public void DeleteEmployee(EmployeeUser employeeUser)
+        public async Task DeleteEmployee(EmployeeUser employeeUser)
         {
-            _context.Remove(employeeUser);
-            _context.SaveChanges();
+            //_context.Remove(employeeUser);
+            //await _context.SaveChangesAsync();
+
+            var query = $@"DELETE EmployeeUsers WHERE EmployeeUserId={employeeUser.EmployeeUserId}";
+
+            await _connection.ExecuteAsync(query);
+
         }
 
-        public void EditEmployee(EmployeeUser employeeUser, int? selectedDepartment)
+        public async Task EditEmployee(EmployeeUser employeeUser, int? selectedDepartment)
         {
             if (selectedDepartment != null)
             {
@@ -177,67 +206,74 @@ namespace EmploymentCore
             }
 
             _context.Update(employeeUser);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public List<FieldOfRating> GetAllFieldeOfRating()
+        public async Task<List<FieldOfRating>> GetAllFieldeOfRating()
         {
-            return _context.FieldOfRatings.ToList();
+            return await _context.FieldOfRatings.ToListAsync();
         }
 
-        public List<HotelDepartment> GetUserDepartment(int userId)
+        public async Task<List<HotelDepartment>> GetUserDepartment(int userId)
         {
-            var departmentId = _context.Users.Where(u => u.Id == userId).Select(u => u.DepartmentId).SingleOrDefault();
+            var departmentId = await _context.Users.Where(u => u.Id == userId).Select(u => u.DepartmentId).FirstOrDefaultAsync();
 
-            var department = _context.HotelDepartments.Where(h => h.DepartmentId == departmentId).ToList();
+            return await _context.HotelDepartments.Where(h => h.DepartmentId == departmentId).ToListAsync();
 
-            return department;
+
         }
 
-        public List<User> GetManagerOfDepartment(int departmentId)
+        public async Task<List<User>> GetManagerOfDepartment(int departmentId)
         {
-            return _context.Users.Where(u=>u.DepartmentId==departmentId).ToList() ;
+            return await _context.Users.Where(u => u.DepartmentId == departmentId).ToListAsync();
         }
 
-        public void AddRate(Rate rate, int managerId, int employeeId)
+        public async Task AddRate(Rate rate, int managerId, int employeeId)
         {
-            _context.Add(rate); 
+            _context.Add(rate);
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
-            var employee = _context.EmployeeUsers.Find(employeeId);
+            var employee = await _context.EmployeeUsers.FindAsync(employeeId);
 
             UserLog log = new UserLog()
             {
                 UserId = managerId,
-                CreationDate=DateTime.Now.toshamsi(),
-                Description=$"امتیاز دهی به کاربر {employee.Name}"
+                CreationDate = DateTime.Now.toshamsi(),
+                Description = $"امتیاز دهی به کاربر {employee.Name}"
 
             };
 
-            _context.Add(log);
-            _context.SaveChanges();
+            await _context.AddAsync(log);
+            await _context.SaveChangesAsync();
 
         }
 
-        public List<Rate> GetAllRate()
+        public async Task<List<Rate>> GetAllRate()
         {
-            return _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).OrderByDescending(r=>r.RateId).ToList();
+            return await _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).OrderByDescending(r => r.RateId).ToListAsync();
         }
 
-        public Rate GetRateBySearch(string parametr)
+        public async Task<Rate> GetRateBySearch(string parametr)
         {
-            return _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).Where(r=>r.User.Name.Contains(parametr) || r.EmployeeUser.Name.Contains(parametr)).FirstOrDefault();
+            return await _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).Where(r => r.User.Name.Contains(parametr) || r.EmployeeUser.Name.Contains(parametr)).FirstOrDefaultAsync();
         }
 
-        public List<Rate> SortRatesByAmount()
+        public async Task<List<Rate>> SortRatesByAmount()
         {
-           return _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).OrderByDescending(r=>r.Amount).ToList();
+            return await _context.Rates.Include(r => r.User).Include(r => r.EmployeeUser).Include(r => r.HotelDepartment).Include(r => r.FieldOfRating).OrderByDescending(r => r.Amount).ToListAsync();
         }
 
-        public EmployeeUser GetEmployeeUser(string userName)
+        public async Task<EmployeeUser> GetEmployeeUser(string userName)
         {
-            return _context.EmployeeUsers.Where(u=>u.Name.Contains(userName)).FirstOrDefault();
+            return await _context.EmployeeUsers.Where(u => u.Name.Contains(userName)).FirstOrDefaultAsync();
         }
+
+
+
+
+
+        #endregion
+
     }
 }
